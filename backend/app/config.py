@@ -63,6 +63,30 @@ OPENSEARCH_URL = env("OPENSEARCH_URL")
 OPENSEARCH_INDEX = env("OPENSEARCH_INDEX", "products")
 
 
+def kafka_ssl_context():
+    """
+    TLS settings for Kafka. Certificates are fully verified (CA chain + host name).
+    Python 3.13+ also enforces an extra rule (VERIFY_X509_STRICT) that rejects some
+    private CA certificates, such as Aiven's Kafka CA, with
+    "CA cert does not include key usage extension". We switch off ONLY that rule.
+    """
+    import ssl
+
+    cafile = backend_path(KAFKA_SSL_CAFILE)
+    if not cafile.exists():
+        raise FileNotFoundError(f"Kafka CA certificate not found: {cafile}")
+    ctx = ssl.create_default_context(cafile=str(cafile))
+    if hasattr(ssl, "VERIFY_X509_STRICT"):
+        ctx.verify_flags &= ~ssl.VERIFY_X509_STRICT
+    if KAFKA_SECURITY_PROTOCOL == "SSL":
+        certfile, keyfile = backend_path(KAFKA_SSL_CERTFILE), backend_path(KAFKA_SSL_KEYFILE)
+        for f in (certfile, keyfile):
+            if not f.exists():
+                raise FileNotFoundError(f"Kafka certificate file not found: {f}")
+        ctx.load_cert_chain(str(certfile), str(keyfile))
+    return ctx
+
+
 def kafka_client_config() -> dict:
     """
     Connection settings shared by every Kafka client we create (kafka-python).
@@ -71,12 +95,9 @@ def kafka_client_config() -> dict:
     cfg = {
         "bootstrap_servers": KAFKA_BOOTSTRAP_SERVERS,
         "security_protocol": KAFKA_SECURITY_PROTOCOL,
-        "ssl_cafile": str(backend_path(KAFKA_SSL_CAFILE)),
+        "ssl_context": kafka_ssl_context(),
     }
-    if KAFKA_SECURITY_PROTOCOL == "SSL":
-        cfg["ssl_certfile"] = str(backend_path(KAFKA_SSL_CERTFILE))
-        cfg["ssl_keyfile"] = str(backend_path(KAFKA_SSL_KEYFILE))
-    elif KAFKA_SECURITY_PROTOCOL == "SASL_SSL":
+    if KAFKA_SECURITY_PROTOCOL == "SASL_SSL":
         cfg["sasl_mechanism"] = KAFKA_SASL_MECHANISM
         cfg["sasl_plain_username"] = KAFKA_SASL_USERNAME
         cfg["sasl_plain_password"] = KAFKA_SASL_PASSWORD

@@ -58,4 +58,5 @@ export const api = {
   placeOrder: (order) => postJSON('/api/orders', order),
   order: (orderNumber) => request(`/api/orders/${encodeURIComponent(orderNumber)}`),
   recentOrders: (limit = 20) => request(`/api/orders?limit=${limit}`),
+  events: (limit = 25) => request(`/api/events?limit=${limit}`),
 }

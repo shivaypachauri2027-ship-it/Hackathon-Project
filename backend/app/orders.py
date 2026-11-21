@@ -22,7 +22,7 @@ from datetime import datetime, timezone
 
 from psycopg.types.json import Jsonb
 
-from . import db
+from . import db, events
 from .config import KAFKA_ORDER_TOPIC
 
 MAX_QTY_PER_ITEM = 10
@@ -135,6 +135,7 @@ def place_order(customer: dict, city: str, items: list[dict]) -> dict:
         )
     # ---- COMMIT happened here ----
 
+    events.notify()  # wake the outbox publisher so the event reaches Kafka right away
     return get_order(order_number)
 
 

@@ -12,7 +12,7 @@ const DEMO_CUSTOMER = {
 function validate(form) {
   const errors = {}
   if (form.name.trim().length < 2) errors.name = 'Enter your full name.'
-  if (!/^[6-9]\d{9}$/.test(form.phone.replace(/\D/g, '').slice(-10))) errors.phone = 'Enter a 10-digit mobile number.'
+  if (!/^[6-9]\d{9}$/.test(form.phone.replace(/\D/g, '').slice(-10))) errors.phone = 'Enter a valid mobile number: 10 digits starting with 6, 7, 8 or 9.'
   if (form.address.trim().length < 10) errors.address = 'Enter your full address (at least 10 characters).'
   return errors
 }

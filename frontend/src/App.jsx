@@ -3,6 +3,7 @@ import CartDrawer from './components/CartDrawer.jsx'
 import Navbar from './components/Navbar.jsx'
 import StatusBar from './components/StatusBar.jsx'
 import CheckoutPage from './pages/CheckoutPage.jsx'
+import EventsPage from './pages/EventsPage.jsx'
 import OrderSuccessPage from './pages/OrderSuccessPage.jsx'
 import StorePage from './pages/StorePage.jsx'
 import useCart from './useCart.js'
@@ -21,7 +22,7 @@ function savedCity() {
 export default function App() {
   const [query, setQuery] = useState('')
   const [city, setCity] = useState(savedCity)
-  const [view, setView] = useState('store') // 'store' | 'checkout' | 'success'
+  const [view, setView] = useState('store') // 'store' | 'checkout' | 'success' | 'events'
   const [cartOpen, setCartOpen] = useState(false)
   const [lastOrder, setLastOrder] = useState(null)
   const [toast, setToast] = useState('')
@@ -68,6 +69,8 @@ export default function App() {
         cartCount={cart.count}
         onCartClick={() => setCartOpen(true)}
         onHome={goToStore}
+        onEventsClick={() => setView('events')}
+        view={view}
       />
 
       <main className="app__main">
@@ -94,6 +97,7 @@ export default function App() {
           />
         )}
         {view === 'success' && lastOrder && <OrderSuccessPage initialOrder={lastOrder} onContinue={goToStore} />}
+        {view === 'events' && <EventsPage />}
       </main>
 
       <CartDrawer

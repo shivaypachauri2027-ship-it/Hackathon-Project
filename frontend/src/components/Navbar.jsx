@@ -26,7 +26,7 @@ function CartIcon() {
   )
 }
 
-export default function Navbar({ query, onQueryChange, cartCount = 0, onCartClick, onHome }) {
+export default function Navbar({ query, onQueryChange, cartCount = 0, onCartClick, onHome, onEventsClick, view }) {
   return (
     <header className="nav">
       <div className="nav__inner">
@@ -55,6 +55,17 @@ export default function Navbar({ query, onQueryChange, cartCount = 0, onCartClic
             aria-label="Search products"
           />
         </form>
+
+        {onEventsClick && (
+          <button
+            type="button"
+            className={`nav-link${view === 'events' ? ' nav-link--active' : ''}`}
+            onClick={onEventsClick}
+          >
+            <span className="nav-link__dot" aria-hidden="true" />
+            Live events
+          </button>
+        )}
 
         <button
           type="button"

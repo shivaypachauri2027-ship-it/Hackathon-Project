@@ -55,10 +55,10 @@ def check_kafka():
     if not config.is_configured(config.KAFKA_BOOTSTRAP_SERVERS):
         return report(SKIP, "Kafka", "KAFKA_BOOTSTRAP_SERVERS is not filled in yet (backend/.env)")
 
-    cfg = config.kafka_client_config()
-    for key in ("ssl_cafile", "ssl_certfile", "ssl_keyfile"):
-        if key in cfg and not Path(cfg[key]).exists():
-            return report(FAIL, "Kafka", f"missing file {cfg[key]} (download it from the Aiven console into backend/certs/)")
+    try:
+        cfg = config.kafka_client_config()
+    except Exception as e:
+        return report(FAIL, "Kafka", f"{type(e).__name__}: {e} (download the files from the Aiven console into backend/certs/)")
     try:
         from kafka import KafkaAdminClient
 
@@ -74,8 +74,7 @@ def check_kafka():
             report(OK, "Kafka", f"connected, topics found: {', '.join(sorted(wanted))}")
     except Exception as e:
         report(FAIL, "Kafka", f"{type(e).__name__}: {e}")
-        print("       Hint: KAFKA_BOOTSTRAP_SERVERS is host:port only (no https://), "
-              "and the three cert files must match this service.")
+        print("       Hint: run  python scripts/kafka_debug.py  to see exactly which step fails.")
 
 
 if __name__ == "__main__":
