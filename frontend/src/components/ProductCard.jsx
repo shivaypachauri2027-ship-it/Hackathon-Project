@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { memo, useState } from 'react'
 import { formatCount, formatINR } from '../utils/format.js'
 
 const FULL_SHELF = 30 // stock level that fills the little meter
@@ -35,7 +35,7 @@ function StockLine({ inCity, city, stockByCity }) {
   )
 }
 
-export default function ProductCard({ product, onAdd, cartQty = 0, flash = false }) {
+function ProductCard({ product, onAdd, cartQty = 0, flash = false }) {
   const [imageFailed, setImageFailed] = useState(false)
   const {
     name, brand, price, mrp, discount_pct, rating, rating_count,
@@ -87,3 +87,6 @@ export default function ProductCard({ product, onAdd, cartQty = 0, flash = false
     </article>
   )
 }
+
+// Redraw a card only when its own data changes, not every time the page updates
+export default memo(ProductCard)

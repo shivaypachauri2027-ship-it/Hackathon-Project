@@ -31,6 +31,14 @@ function SkeletonGrid() {
 }
 
 const LIVE_MS = 5000 // how often the store quietly re-checks stock
+const CACHE_MAX = 40 // product lists kept in memory, so going back to them is instant
+
+// Same order of keys as the store's own params, so the cache keys match
+const DEFAULTS = { q: '', category: '', city: '', min_price: null, max_price: null, in_stock: false, sort: 'relevance' }
+
+// Two results look the same on screen when the products, their stock and the counts match
+const signature = (data) =>
+  JSON.stringify([data.total, data.source, data.items.map((p) => [p.id, p.stock_in_city]), data.facets])
 
 export default function StorePage({
   query, onClearQuery, city, onCityChange, onAddToCart, cartQuantities = {}, smartFilters, onClearSmart,
@@ -71,27 +79,64 @@ export default function StorePage({
     api.meta().then(setMeta).catch(() => {})
   }, [reloadKey])
 
+  // Recently loaded product lists. Showing one of these is instant; a fresh copy
+  // is still fetched in the background, so stock is never left stale.
+  const cache = useRef(new Map())
+  const remember = (key, data) => {
+    cache.current.delete(key)
+    cache.current.set(key, data)
+    if (cache.current.size > CACHE_MAX) cache.current.delete(cache.current.keys().next().value)
+  }
+
   // Products: reload whenever any filter changes
   useEffect(() => {
     const controller = new AbortController()
-    setLoading(true)
+    const cached = cache.current.get(paramsKey)
+    if (cached) setResult(cached) // instant, then refreshed below
+    setLoading(!cached)
     setError('')
     api
-      .products(
-        { q, category, city, min_price: minPrice, max_price: maxPrice, in_stock: inStock, sort },
-        controller.signal,
-      )
+      .products(JSON.parse(paramsKey), controller.signal)
       .then((data) => {
-        setResult(data)
+        remember(paramsKey, data)
+        if (!cached || signature(cached) !== signature(data)) setResult(data)
         setLoading(false)
       })
       .catch((err) => {
         if (err.name === 'AbortError') return
-        setError(err.message)
+        if (!cached) setError(err.message) // with a cached list on screen, just keep it
         setLoading(false)
       })
     return () => controller.abort()
   }, [paramsKey, reloadKey]) // eslint-disable-line react-hooks/exhaustive-deps
+
+  // Browse faster: once a city's store has loaded, quietly load each category
+  // in the background (one at a time), so clicking a category chip is instant.
+  const prefetched = useRef(new Set())
+  const mounted = useRef(true)
+  useEffect(() => {
+    mounted.current = true
+    return () => {
+      mounted.current = false
+    }
+  }, [])
+  useEffect(() => {
+    if (!result || !meta.categories.length || prefetched.current.has(city)) return
+    prefetched.current.add(city)
+    ;(async () => {
+      for (const c of meta.categories) {
+        const p = { ...DEFAULTS, city, category: c.name }
+        const key = JSON.stringify(p)
+        if (!mounted.current) return
+        if (cache.current.has(key)) continue
+        try {
+          remember(key, await api.products(p))
+        } catch {
+          return // offline or busy: browsing still works, just not pre-loaded
+        }
+      }
+    })()
+  }, [result, meta.categories, city]) // eslint-disable-line react-hooks/exhaustive-deps
 
   // Live stock: every 5 s (while this tab is visible) quietly fetch the same list again.
   // Cards whose stock changed flash, so you can see other people's orders land.
@@ -102,7 +147,10 @@ export default function StorePage({
       try {
         const data = await api.products(JSON.parse(askedFor))
         if (latest.current.paramsKey !== askedFor) return // filters changed meanwhile
-        const before = new Map((latest.current.result?.items || []).map((p) => [p.id, p.stock_in_city]))
+        remember(askedFor, data)
+        const current = latest.current.result
+        if (current && signature(current) === signature(data)) return // nothing changed: no redraw
+        const before = new Map((current?.items || []).map((p) => [p.id, p.stock_in_city]))
         const changed = data.items.filter((p) => before.has(p.id) && before.get(p.id) !== p.stock_in_city).map((p) => p.id)
         setResult(data)
         if (changed.length) {
