@@ -108,13 +108,13 @@ export default function EventsPage() {
                           <td>{e.topic}</td>
                           <td>
                             {e.published_at ? (
-                              <span className="chip chip--ok">Sent {timeOf(e.published_at)}</span>
+                              <span className="badge badge--ok">Sent {timeOf(e.published_at)}</span>
                             ) : e.last_error ? (
-                              <span className="chip chip--bad" title={e.last_error}>
+                              <span className="badge badge--bad" title={e.last_error}>
                                 Retrying ({e.publish_attempts})
                               </span>
                             ) : (
-                              <span className="chip chip--wait">Waiting</span>
+                              <span className="badge badge--wait">Waiting</span>
                             )}
                           </td>
                         </tr>
@@ -186,7 +186,7 @@ export default function EventsPage() {
                         <td>{o.units}</td>
                         <td>{formatINR(o.total_amount)}</td>
                         <td>
-                          <span className={`chip ${o.status === 'CONFIRMED' ? 'chip--ok' : 'chip--wait'}`}>
+                          <span className={`badge ${o.status === 'CONFIRMED' ? 'badge--ok' : 'badge--wait'}`}>
                             {o.status === 'CONFIRMED' ? 'Confirmed' : 'Placed, stock reserved'}
                           </span>
                         </td>

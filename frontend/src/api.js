@@ -59,4 +59,7 @@ export const api = {
   order: (orderNumber) => request(`/api/orders/${encodeURIComponent(orderNumber)}`),
   recentOrders: (limit = 20) => request(`/api/orders?limit=${limit}`),
   events: (limit = 25) => request(`/api/events?limit=${limit}`),
+  // Phase 6 demo tools
+  changeStock: (change) => postJSON('/api/admin/stock', change),
+  syncStatus: (productId, city) => request(`/api/admin/sync-status/${productId}?${toQuery({ city })}`),
 }

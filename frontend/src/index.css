@@ -1433,7 +1433,7 @@ select {
   white-space: nowrap;
 }
 
-.chip {
+.badge {
   display: inline-block;
   padding: 1px 8px;
   border-radius: var(--radius-pill);
@@ -1442,17 +1442,17 @@ select {
   white-space: nowrap;
 }
 
-.chip--ok {
+.badge--ok {
   background: var(--stock-soft);
   color: var(--stock);
 }
 
-.chip--wait {
+.badge--wait {
   background: var(--indigo-100);
   color: var(--indigo-700);
 }
 
-.chip--bad {
+.badge--bad {
   background: var(--low-soft);
   color: var(--low);
 }
@@ -1485,4 +1485,318 @@ select {
   margin-top: 4px;
   color: var(--indigo-700);
   font-size: 15px;
+}
+
+/* =========================================================
+   PHASE 6: live stock, plain-words search, demo tools
+   ========================================================= */
+.nav-link + .nav-link {
+  margin-left: 0;
+}
+
+/* A card whose stock just changed (someone else ordered or a restock landed) */
+.card--flash {
+  border-color: var(--marigold);
+  box-shadow: 0 0 0 3px rgba(244, 163, 0, 0.45);
+}
+
+.card--flash .stock__text {
+  background: rgba(244, 163, 0, 0.18);
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .card--flash {
+    animation: stock-flash 2.4s ease-out;
+  }
+
+  .live-pill__dot {
+    animation: pulse 1.6s ease-in-out infinite;
+  }
+}
+
+@keyframes stock-flash {
+  0%,
+  35% {
+    box-shadow: 0 0 0 4px rgba(244, 163, 0, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 0 3px rgba(244, 163, 0, 0.1);
+  }
+}
+
+.live-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-right: 10px;
+  padding: 0 8px;
+  border-radius: var(--radius-pill);
+  background: var(--stock-soft);
+  color: var(--stock);
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.live-pill__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--stock);
+}
+
+/* Category with no matches for the current search and filters */
+.chip--empty:not(.chip--active) {
+  opacity: 0.45;
+}
+
+/* "Understood:" banner for plain-words search */
+.understood {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 10px;
+  margin-bottom: 16px;
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  background: var(--indigo-100);
+  color: var(--indigo-900);
+}
+
+.understood__label {
+  font-weight: 700;
+}
+
+.understood__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.understood__list li {
+  background: var(--white);
+  border: 1px solid rgba(46, 58, 140, 0.2);
+  border-radius: var(--radius-pill);
+  padding: 1px 10px;
+  font-size: 15px;
+}
+
+.understood__clear {
+  margin-left: auto;
+  border: 0;
+  background: none;
+  color: var(--indigo-700);
+  font: inherit;
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* ---------- Demo tools page ---------- */
+.demo__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.demo .panel > .muted {
+  margin: -6px 0 16px;
+}
+
+.demo__controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 14px;
+}
+
+.demo__controls .field {
+  flex: 1 1 140px;
+  min-width: 0;
+}
+
+.field select {
+  font: inherit;
+  font-size: 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  background: var(--white);
+  color: var(--ink);
+  width: 100%;
+  min-width: 0;
+  text-overflow: ellipsis;
+}
+
+.field select:focus {
+  outline: none;
+  border-color: var(--indigo-700);
+  box-shadow: 0 0 0 3px var(--indigo-100);
+}
+
+.demo__verdict {
+  margin: 18px 0 12px;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--low);
+}
+
+.demo__verdict--ok {
+  color: var(--stock);
+}
+
+.shoppers {
+  list-style: none;
+  margin: 16px 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 8px;
+}
+
+.shopper {
+  display: grid;
+  gap: 2px;
+  padding: 8px 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+  background: var(--paper);
+  font-size: 14px;
+}
+
+.shopper__name {
+  color: var(--muted);
+}
+
+.shopper__state {
+  font-weight: 700;
+}
+
+.shopper__ms {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.shopper--won {
+  background: var(--stock-soft);
+  border-color: var(--stock);
+  color: var(--stock);
+}
+
+.shopper--won .shopper__name,
+.shopper--won .shopper__ms {
+  color: var(--stock);
+}
+
+.shopper--lost {
+  background: var(--low-soft);
+  border-color: transparent;
+}
+
+.shopper--lost .shopper__state,
+.shopper--error .shopper__state {
+  color: var(--low);
+}
+
+/* PostgreSQL vs OpenSearch, side by side */
+.sync {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 10px 14px;
+  margin-top: 18px;
+  padding: 16px;
+  border-radius: var(--radius-md);
+  background: var(--paper);
+  border: 1px solid var(--line);
+}
+
+.sync__side {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+}
+
+.sync__label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.sync__value {
+  font-family: var(--font-display);
+  font-size: 44px;
+  line-height: 1.1;
+  color: var(--indigo-900);
+}
+
+.sync__unit {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.sync__arrow {
+  position: relative;
+  padding: 2px 12px;
+  border-radius: var(--radius-pill);
+  background: var(--indigo-900);
+  color: var(--white);
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.sync__arrow::after {
+  content: '→';
+  margin-left: 6px;
+  color: var(--marigold);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .sync__arrow--busy {
+    animation: pulse 1s ease-in-out infinite;
+  }
+}
+
+.sync__note {
+  grid-column: 1 / -1;
+  margin: 0;
+  text-align: center;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.sync__note--ok {
+  color: var(--stock);
+  font-weight: 700;
+}
+
+.sync__note--bad {
+  color: var(--low);
+}
+
+@media (max-width: 900px) {
+  .demo__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .nav-link--demo {
+    display: none;
+  }
+
+  .sync {
+    grid-template-columns: 1fr;
+  }
+
+  .sync__arrow {
+    justify-self: center;
+  }
+
+  .sync__arrow::after {
+    content: '↓';
+  }
 }

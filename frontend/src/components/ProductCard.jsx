@@ -35,7 +35,7 @@ function StockLine({ inCity, city, stockByCity }) {
   )
 }
 
-export default function ProductCard({ product, onAdd, cartQty = 0 }) {
+export default function ProductCard({ product, onAdd, cartQty = 0, flash = false }) {
   const [imageFailed, setImageFailed] = useState(false)
   const {
     name, brand, price, mrp, discount_pct, rating, rating_count,
@@ -50,7 +50,7 @@ export default function ProductCard({ product, onAdd, cartQty = 0 }) {
   else if (cartQty > 0) buttonLabel = `Add one more (${cartQty} in cart)`
 
   return (
-    <article className={`card${out ? ' card--out' : ''}`}>
+    <article className={`card${out ? ' card--out' : ''}${flash ? ' card--flash' : ''}`}>
       <div className="card__media">
         {image_url && !imageFailed ? (
           <img src={image_url} alt={name} loading="lazy" onError={() => setImageFailed(true)} />

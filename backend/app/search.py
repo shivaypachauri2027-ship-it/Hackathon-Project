@@ -157,10 +157,10 @@ def create_index(recreate: bool = False):
 
 # ------------------------------------------------------------------ searching
 
-def _query(q, category, city, min_price, max_price, in_stock) -> dict:
+def _query(q, city, min_price, max_price, in_stock) -> dict:
+    """Text + price + availability. (The category filter is applied separately as a
+    post_filter, so the category chips can still show counts for every category.)"""
     filters = []
-    if category:
-        filters.append({"term": {"category": category}})
     if min_price is not None or max_price is not None:
         price = {}
         if min_price is not None:
@@ -217,9 +217,14 @@ def search_products(q=None, category=None, city="Bengaluru", min_price=None,
                     max_price=None, in_stock=False, sort="relevance") -> dict:
     body = {
         "size": 100,
-        "query": _query(q, category, city, min_price, max_price, in_stock),
+        "query": _query(q, city, min_price, max_price, in_stock),
         "sort": SORTS.get(sort, SORTS["relevance"]) if q or sort != "relevance" else [{"id": "asc"}],
+        # Counts per category for the chips (an OpenSearch aggregation), computed
+        # BEFORE the category filter so every chip shows how many matches it has
+        "aggs": {"categories": {"terms": {"field": "category", "size": 20}}},
     }
+    if category:
+        body["post_filter"] = {"term": {"category": category}}
     if q:
         body["suggest"] = {"spelling": {"text": q, "term": {"field": "search_text", "suggest_mode": "missing"}}}
 
@@ -245,7 +250,19 @@ def search_products(q=None, category=None, city="Bengaluru", min_price=None,
         "source": "opensearch",
         "search_mode": f"typo-tolerant search in {res.get('took', 0)} ms" if q else f"{res.get('took', 0)} ms",
         "did_you_mean": _did_you_mean(q, res.get("suggest")) if q else None,
+        "facets": {
+            "categories": [
+                {"name": b["key"], "count": b["doc_count"]}
+                for b in res.get("aggregations", {}).get("categories", {}).get("buckets", [])
+            ]
+        },
     }
+
+
+def get_stock(product_id: int, city: str) -> int:
+    """What the SEARCH COPY currently says is available (for the sync monitor)."""
+    doc = client().get(index=OPENSEARCH_INDEX, id=product_id)["_source"]
+    return (doc.get("stock_by_city") or {}).get(city, 0)
 
 
 def health() -> dict:

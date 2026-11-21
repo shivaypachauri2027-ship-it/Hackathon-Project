@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { api } from '../api.js'
 import FilterSidebar from '../components/FilterSidebar.jsx'
 import ProductCard from '../components/ProductCard.jsx'
@@ -30,7 +30,11 @@ function SkeletonGrid() {
   )
 }
 
-export default function StorePage({ query, onClearQuery, city, onCityChange, onAddToCart, cartQuantities = {} }) {
+const LIVE_MS = 5000 // how often the store quietly re-checks stock
+
+export default function StorePage({
+  query, onClearQuery, city, onCityChange, onAddToCart, cartQuantities = {}, smartFilters, onClearSmart,
+}) {
   const [meta, setMeta] = useState({ categories: [], cities: [city] })
   const [category, setCategory] = useState('')
   const [minPrice, setMinPrice] = useState(null)
@@ -43,8 +47,24 @@ export default function StorePage({ query, onClearQuery, city, onCityChange, onA
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
   const [reloadKey, setReloadKey] = useState(0)
+  const [flashIds, setFlashIds] = useState(() => new Set())
 
   const q = useDebounced(query.trim(), 300)
+  const params = { q, category, city, min_price: minPrice, max_price: maxPrice, in_stock: inStock, sort }
+  const paramsKey = JSON.stringify(params)
+  const latest = useRef({ paramsKey, result: null })
+  latest.current.paramsKey = paramsKey
+  latest.current.result = result
+
+  // Plain-words search ("earphones under 2000 in Pune"): apply what the parser understood
+  useEffect(() => {
+    if (!smartFilters) return
+    setCategory(smartFilters.category || '')
+    setMinPrice(smartFilters.min)
+    setMaxPrice(smartFilters.max)
+    setInStock(Boolean(smartFilters.inStock))
+    setSort(smartFilters.sort || 'relevance')
+  }, [smartFilters?.id]) // eslint-disable-line react-hooks/exhaustive-deps
 
   // Categories and cities for the filters (loaded once)
   useEffect(() => {
@@ -71,7 +91,30 @@ export default function StorePage({ query, onClearQuery, city, onCityChange, onA
         setLoading(false)
       })
     return () => controller.abort()
-  }, [q, category, city, minPrice, maxPrice, inStock, sort, reloadKey])
+  }, [paramsKey, reloadKey]) // eslint-disable-line react-hooks/exhaustive-deps
+
+  // Live stock: every 5 s (while this tab is visible) quietly fetch the same list again.
+  // Cards whose stock changed flash, so you can see other people's orders land.
+  useEffect(() => {
+    const timer = setInterval(async () => {
+      if (document.visibilityState !== 'visible') return
+      const askedFor = latest.current.paramsKey
+      try {
+        const data = await api.products(JSON.parse(askedFor))
+        if (latest.current.paramsKey !== askedFor) return // filters changed meanwhile
+        const before = new Map((latest.current.result?.items || []).map((p) => [p.id, p.stock_in_city]))
+        const changed = data.items.filter((p) => before.has(p.id) && before.get(p.id) !== p.stock_in_city).map((p) => p.id)
+        setResult(data)
+        if (changed.length) {
+          setFlashIds(new Set(changed))
+          setTimeout(() => setFlashIds(new Set()), 2500)
+        }
+      } catch {
+        // a missed refresh is fine; the next one will try again
+      }
+    }, LIVE_MS)
+    return () => clearInterval(timer)
+  }, [])
 
   function resetFilters() {
     setCategory('')
@@ -80,9 +123,15 @@ export default function StorePage({ query, onClearQuery, city, onCityChange, onA
     setInStock(false)
     setSort('relevance')
     onClearQuery()
+    onClearSmart?.()
   }
 
-  const totalProducts = meta.categories.reduce((sum, c) => sum + c.count, 0)
+  // Category counts: live from OpenSearch (they follow the search, price and stock
+  // filters); with the PostgreSQL fallback, the plain catalogue totals.
+  const facets = result?.facets?.categories
+  const facetCount = facets ? Object.fromEntries(facets.map((f) => [f.name, f.count])) : null
+  const countFor = (c) => (facetCount ? facetCount[c.name] || 0 : c.count)
+  const totalProducts = meta.categories.reduce((sum, c) => sum + countFor(c), 0)
 
   return (
     <>
@@ -107,16 +156,16 @@ export default function StorePage({ query, onClearQuery, city, onCityChange, onA
 
         <nav className="chips" aria-label="Categories">
           <button type="button" className={`chip${category === '' ? ' chip--active' : ''}`} onClick={() => setCategory('')}>
-            All <span>{totalProducts || ''}</span>
+            All <span>{totalProducts}</span>
           </button>
           {meta.categories.map((c) => (
             <button
               key={c.name}
               type="button"
-              className={`chip${category === c.name ? ' chip--active' : ''}`}
+              className={`chip${category === c.name ? ' chip--active' : ''}${countFor(c) === 0 ? ' chip--empty' : ''}`}
               onClick={() => setCategory(c.name)}
             >
-              {c.name} <span>{c.count}</span>
+              {c.name} <span>{countFor(c)}</span>
             </button>
           ))}
         </nav>
@@ -145,8 +194,21 @@ export default function StorePage({ query, onClearQuery, city, onCityChange, onA
           onReset={resetFilters}
         />
 
-        <section className="results" aria-live="polite">
-          <div className="results__bar">
+        <section className="results">
+          {smartFilters && (
+            <div className="understood" role="status">
+              <span className="understood__label">Understood:</span>
+              <ul className="understood__list">
+                {smartFilters.understood.map((label) => (
+                  <li key={label}>{label}</li>
+                ))}
+              </ul>
+              <button type="button" className="understood__clear" onClick={resetFilters}>
+                Clear
+              </button>
+            </div>
+          )}
+          <div className="results__bar" aria-live="polite">
             <div>
               <h2 className="results__title">
                 {result && !error
@@ -155,6 +217,10 @@ export default function StorePage({ query, onClearQuery, city, onCityChange, onA
               </h2>
               {result && !error && (
                 <p className="results__source" title={result.search_mode}>
+                  <span className="live-pill" title="Stock on this page refreshes every 5 seconds">
+                    <span className="live-pill__dot" aria-hidden="true" />
+                    Live stock
+                  </span>
                   Served by {sourceLabel(result.source)}
                   {result.search_mode ? `, ${result.search_mode}` : ''}
                 </p>
@@ -196,7 +262,13 @@ export default function StorePage({ query, onClearQuery, city, onCityChange, onA
           ) : (
             <div className={`grid${loading ? ' grid--updating' : ''}`}>
               {result.items.map((p) => (
-                <ProductCard key={p.id} product={p} onAdd={onAddToCart} cartQty={cartQuantities[p.id] || 0} />
+                <ProductCard
+                  key={p.id}
+                  product={p}
+                  onAdd={onAddToCart}
+                  cartQty={cartQuantities[p.id] || 0}
+                  flash={flashIds.has(p.id)}
+                />
               ))}
             </div>
           )}

@@ -26,7 +26,9 @@ function CartIcon() {
   )
 }
 
-export default function Navbar({ query, onQueryChange, cartCount = 0, onCartClick, onHome, onEventsClick, view }) {
+export default function Navbar({
+  query, onQueryChange, onSearchSubmit, cartCount = 0, onCartClick, onHome, onEventsClick, onDemoClick, view,
+}) {
   return (
     <header className="nav">
       <div className="nav__inner">
@@ -45,16 +47,34 @@ export default function Navbar({ query, onQueryChange, cartCount = 0, onCartClic
           <span>InstaStock</span>
         </a>
 
-        <form className="search" role="search" onSubmit={(e) => e.preventDefault()}>
+        {/* Enter runs the plain-words parser: "earphones under 2000 in Pune" */}
+        <form
+          className="search"
+          role="search"
+          onSubmit={(e) => {
+            e.preventDefault()
+            onSearchSubmit?.(query)
+          }}
+        >
           <SearchIcon />
           <input
             type="search"
             value={query}
             onChange={(e) => onQueryChange(e.target.value)}
-            placeholder="Search earbuds, kadhai, cricket bat…"
+            placeholder="Search, or try: earphones under 2000 in Pune"
             aria-label="Search products"
           />
         </form>
+
+        {onDemoClick && (
+          <button
+            type="button"
+            className={`nav-link nav-link--demo${view === 'demo' ? ' nav-link--active' : ''}`}
+            onClick={onDemoClick}
+          >
+            Demo tools
+          </button>
+        )}
 
         {onEventsClick && (
           <button

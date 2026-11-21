@@ -17,7 +17,7 @@ from fastapi.responses import JSONResponse
 from psycopg_pool import PoolTimeout
 from pydantic import BaseModel, Field, field_validator
 
-from . import catalog, db, events, orders, search
+from . import admin, catalog, db, events, orders, search
 from .config import CORS_ORIGINS, DEFAULT_CITY
 
 
@@ -38,7 +38,7 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(
     title="InstaStock API",
-    version="0.5.0",
+    version="0.6.0",
     description="Event-driven online store: PostgreSQL + Kafka + OpenSearch",
     lifespan=lifespan,
 )
@@ -90,7 +90,7 @@ def health():
     """The footer of the website shows these statuses."""
     return {
         "status": "ok",
-        "phase": 5,
+        "phase": 6,
         "catalog_source": catalog.SOURCE,
         "services": {
             "postgres": db.ping(),
@@ -196,3 +196,32 @@ def live_events(limit: int = 25):
     data = events.recent_activity(min(max(limit, 1), 100))
     data["orders"] = orders.recent_orders(10)
     return data
+
+
+# ------------------------------------------------------------------ demo tools (Phase 6)
+# No login: hackathon demo only. In a real store these sit behind a staff login.
+
+class StockChange(BaseModel):
+    product_id: int
+    city: str
+    add: int | None = Field(default=None, ge=1, le=100)
+    set_available: int | None = Field(default=None, ge=0, le=100)
+
+
+@app.exception_handler(admin.StockError)
+async def stock_problem(request: Request, exc: admin.StockError):
+    return JSONResponse(status_code=400, content={"detail": str(exc)})
+
+
+@app.post("/api/admin/stock")
+def change_stock(req: StockChange):
+    """Restock (add) or set exactly N available (flash sale). Publishes STOCK_CHANGED."""
+    _check_city(req.city)
+    return admin.change_stock(req.product_id, req.city, add=req.add, set_available=req.set_available)
+
+
+@app.get("/api/admin/sync-status/{product_id}")
+def sync_status(product_id: int, city: str = DEFAULT_CITY):
+    """Stock in PostgreSQL (truth) vs OpenSearch (search copy), for the sync monitor."""
+    _check_city(city)
+    return admin.sync_status(product_id, city)
