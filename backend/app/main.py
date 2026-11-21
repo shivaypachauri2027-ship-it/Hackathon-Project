@@ -7,6 +7,7 @@ Run from the backend/ folder (virtual environment active):
 Interactive API docs (great to show judges): http://localhost:8000/docs
 """
 import re
+import os
 from contextlib import asynccontextmanager
 
 import psycopg
@@ -30,8 +31,15 @@ async def lifespan(app: FastAPI):
         print(f"WARNING: database not ready: {e}")
     # Start the background thread that sends outbox events to Kafka (Phase 4)
     events.start_publisher()
+    # Hosted on a free plan: also run the Kafka consumers in this same program
+    run_worker = os.getenv("RUN_WORKER", "false").lower() == "true"
+    if run_worker:
+        from . import worker
+        worker.start_in_background()
     yield
-    # Shutdown: stop the publisher and close database connections cleanly.
+    # Shutdown: stop the consumers and the publisher, close database connections.
+    if run_worker:
+        worker.stop_background()
     events.stop_publisher()
     db.close_pool()
 

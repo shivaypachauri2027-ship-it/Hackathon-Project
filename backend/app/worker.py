@@ -156,6 +156,33 @@ def run_consumer(name: str, topic: str, handler):
                     pass
 
 
+# ------------------------------------------------- run inside the API (for hosting)
+# A free hosting plan runs one program, so the deployed API can start the two
+# consumers itself when RUN_WORKER=true. Locally we still run them separately.
+_background = []
+
+
+def start_in_background():
+    if events.kafka_mode() != "kafka" or _background:
+        return
+    _stop.clear()
+    for name, topic, handler in (
+        ("inventory-worker", KAFKA_ORDER_TOPIC, handle_order_placed),
+        ("search-sync", KAFKA_INVENTORY_TOPIC, handle_stock_changed),
+    ):
+        t = threading.Thread(target=run_consumer, args=(name, topic, handler), daemon=True)
+        t.start()
+        _background.append(t)
+    print("Kafka consumers started inside the API (RUN_WORKER=true).", flush=True)
+
+
+def stop_background():
+    _stop.set()
+    for t in _background:
+        t.join(timeout=5)
+    _background.clear()
+
+
 def main():
     mode = events.kafka_mode()
     if mode != "kafka":
