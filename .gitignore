@@ -1,0 +1,32 @@
+# ---------- Secrets (NEVER commit) ----------
+.env
+.env.*
+!.env.example
+backend/certs/*
+!backend/certs/README.md
+*.pem
+*.key
+*.cert
+*.p12
+*.jks
+
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.pytest_cache/
+
+# ---------- Node / Vite ----------
+node_modules/
+dist/
+.vite/
+npm-debug.log*
+
+# ---------- Editors / OS ----------
+.DS_Store
+Thumbs.db
+.idea/
+*.swp
+*.log

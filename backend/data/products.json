@@ -1,0 +1,2225 @@
+{
+  "cities": [
+    "Bengaluru",
+    "Mumbai",
+    "Delhi",
+    "Pune",
+    "Hyderabad",
+    "Chennai"
+  ],
+  "categories": [
+    "Audio",
+    "Mobiles",
+    "Electronics",
+    "Fashion",
+    "Home & Kitchen",
+    "Grocery",
+    "Beauty",
+    "Sports"
+  ],
+  "products": [
+    {
+      "id": 1,
+      "sku": "AUD-001",
+      "name": "boAt Airdopes 141 Bluetooth Earbuds",
+      "brand": "boAt",
+      "category": "Audio",
+      "price": 1299,
+      "mrp": 4490,
+      "rating": 4.4,
+      "rating_count": 31963,
+      "image_url": "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods/thumbnail.webp",
+      "description": "Truly wireless earbuds with 42 hours of playback, low-latency gaming mode and IPX4 sweat resistance.",
+      "tags": [
+        "bluetooth",
+        "wireless",
+        "earbuds",
+        "earphones",
+        "tws"
+      ],
+      "stock": {
+        "Bengaluru": 18,
+        "Mumbai": 25,
+        "Delhi": 12,
+        "Pune": 2,
+        "Hyderabad": 9,
+        "Chennai": 14
+      }
+    },
+    {
+      "id": 2,
+      "sku": "AUD-002",
+      "name": "Noise Buds VS104 Truly Wireless Earbuds",
+      "brand": "Noise",
+      "category": "Audio",
+      "price": 1099,
+      "mrp": 3499,
+      "rating": 4.2,
+      "rating_count": 982,
+      "image_url": "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods/thumbnail.webp",
+      "description": "Bluetooth 5.3 earbuds with quad mics for clear calls and 45 hours of total playtime.",
+      "tags": [
+        "bluetooth",
+        "wireless",
+        "earbuds",
+        "earphones",
+        "tws"
+      ],
+      "stock": {
+        "Bengaluru": 8,
+        "Mumbai": 23,
+        "Delhi": 0,
+        "Pune": 20,
+        "Hyderabad": 0,
+        "Chennai": 1
+      }
+    },
+    {
+      "id": 3,
+      "sku": "AUD-003",
+      "name": "OnePlus Bullets Wireless Z2 Bluetooth Neckband",
+      "brand": "OnePlus",
+      "category": "Audio",
+      "price": 1799,
+      "mrp": 2299,
+      "rating": 4.2,
+      "rating_count": 9256,
+      "image_url": "https://cdn.dummyjson.com/product-images/mobile-accessories/beats-flex-wireless-earphones/thumbnail.webp",
+      "description": "Neckband earphones with 30 hours of battery and a 10-minute charge for 20 hours of music.",
+      "tags": [
+        "bluetooth",
+        "wireless",
+        "neckband",
+        "earphones"
+      ],
+      "stock": {
+        "Bengaluru": 16,
+        "Mumbai": 0,
+        "Delhi": 19,
+        "Pune": 20,
+        "Hyderabad": 0,
+        "Chennai": 14
+      }
+    },
+    {
+      "id": 4,
+      "sku": "AUD-004",
+      "name": "boAt Rockerz 255 Pro+ Bluetooth Neckband",
+      "brand": "boAt",
+      "category": "Audio",
+      "price": 999,
+      "mrp": 3990,
+      "rating": 4.1,
+      "rating_count": 86697,
+      "image_url": "https://cdn.dummyjson.com/product-images/mobile-accessories/beats-flex-wireless-earphones/thumbnail.webp",
+      "description": "Magnetic earbuds, ASAP fast charge and up to 60 hours of playback on a single charge.",
+      "tags": [
+        "bluetooth",
+        "wireless",
+        "neckband",
+        "earphones"
+      ],
+      "stock": {
+        "Bengaluru": 1,
+        "Mumbai": 5,
+        "Delhi": 26,
+        "Pune": 8,
+        "Hyderabad": 15,
+        "Chennai": 0
+      }
+    },
+    {
+      "id": 5,
+      "sku": "AUD-005",
+      "name": "Sony WH-1000XM5 Wireless Noise Cancelling Headphones",
+      "brand": "Sony",
+      "category": "Audio",
+      "price": 29990,
+      "mrp": 34990,
+      "rating": 4.2,
+      "rating_count": 73811,
+      "image_url": "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods-max-silver/thumbnail.webp",
+      "description": "Industry-leading noise cancellation, 30-hour battery and crystal-clear hands-free calling.",
+      "tags": [
+        "bluetooth",
+        "wireless",
+        "headphones",
+        "noise cancelling",
+        "over-ear"
+      ],
+      "stock": {
+        "Bengaluru": 1,
+        "Mumbai": 2,
+        "Delhi": 0,
+        "Pune": 3,
+        "Hyderabad": 1,
+        "Chennai": 0
+      }
+    },
+    {
+      "id": 6,
+      "sku": "AUD-006",
+      "name": "JBL Tune 770NC Bluetooth Headphones",
+      "brand": "JBL",
+      "category": "Audio",
+      "price": 5999,
+      "mrp": 9999,
+      "rating": 4.1,
+      "rating_count": 588,
+      "image_url": "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods-max-silver/thumbnail.webp",
+      "description": "Adaptive noise cancelling over-ear headphones with JBL Pure Bass and 70 hours of battery.",
+      "tags": [
+        "bluetooth",
+        "wireless",
+        "headphones",
+        "noise cancelling",
+        "over-ear"
+      ],
+      "stock": {
+        "Bengaluru": 14,
+        "Mumbai": 28,
+        "Delhi": 3,
+        "Pune": 13,
+        "Hyderabad": 22,
+        "Chennai": 0
+      }
+    },
+    {
+      "id": 7,
+      "sku": "AUD-007",
+      "name": "JBL Flip 6 Portable Bluetooth Speaker",
+      "brand": "JBL",
+      "category": "Audio",
+      "price": 9999,
+      "mrp": 14999,
+      "rating": 4.5,
+      "rating_count": 60801,
+      "image_url": "https://cdn.dummyjson.com/product-images/mobile-accessories/amazon-echo-plus/thumbnail.webp",
+      "description": "IP67 waterproof and dustproof speaker with bold JBL Original Pro Sound and 12 hours of play.",
+      "tags": [
+        "bluetooth",
+        "wireless",
+        "speaker",
+        "portable",
+        "waterproof"
+      ],
+      "stock": {
+        "Bengaluru": 9,
+        "Mumbai": 1,
+        "Delhi": 21,
+        "Pune": 0,
+        "Hyderabad": 27,
+        "Chennai": 5
+      }
+    },
+    {
+      "id": 8,
+      "sku": "AUD-008",
+      "name": "boAt Stone 350 Bluetooth Speaker",
+      "brand": "boAt",
+      "category": "Audio",
+      "price": 1499,
+      "mrp": 3490,
+      "rating": 4.2,
+      "rating_count": 30604,
+      "image_url": "https://cdn.dummyjson.com/product-images/mobile-accessories/amazon-echo-plus/thumbnail.webp",
+      "description": "10W portable speaker with RGB lights, TWS pairing and 12 hours of playback.",
+      "tags": [
+        "bluetooth",
+        "wireless",
+        "speaker",
+        "portable"
+      ],
+      "stock": {
+        "Bengaluru": 7,
+        "Mumbai": 0,
+        "Delhi": 30,
+        "Pune": 0,
+        "Hyderabad": 7,
+        "Chennai": 25
+      }
+    },
+    {
+      "id": 9,
+      "sku": "AUD-009",
+      "name": "Mivi Roam 2 Bluetooth Speaker",
+      "brand": "Mivi",
+      "category": "Audio",
+      "price": 999,
+      "mrp": 2999,
+      "rating": 3.9,
+      "rating_count": 4542,
+      "image_url": "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-homepod-mini-cosmic-grey/thumbnail.webp",
+      "description": "Made-in-India compact speaker with 24 hours of playtime and an IPX7 rating.",
+      "tags": [
+        "bluetooth",
+        "wireless",
+        "speaker",
+        "portable",
+        "made in india"
+      ],
+      "stock": {
+        "Bengaluru": 9,
+        "Mumbai": 30,
+        "Delhi": 11,
+        "Pune": 1,
+        "Hyderabad": 0,
+        "Chennai": 1
+      }
+    },
+    {
+      "id": 10,
+      "sku": "MOB-001",
+      "name": "realme Narzo 70 5G (6GB RAM, 128GB)",
+      "brand": "realme",
+      "category": "Mobiles",
+      "price": 14999,
+      "mrp": 18999,
+      "rating": 4.3,
+      "rating_count": 10093,
+      "image_url": "https://cdn.dummyjson.com/product-images/smartphones/realme-c35/thumbnail.webp",
+      "description": "120Hz AMOLED display, Dimensity 7050 chipset and 45W SUPERVOOC charging.",
+      "tags": [
+        "smartphone",
+        "5g",
+        "android",
+        "mobile phone"
+      ],
+      "stock": {
+        "Bengaluru": 9,
+        "Mumbai": 0,
+        "Delhi": 10,
+        "Pune": 0,
+        "Hyderabad": 24,
+        "Chennai": 12
+      }
+    },
+    {
+      "id": 11,
+      "sku": "MOB-002",
+      "name": "realme 12 Pro+ 5G (8GB RAM, 256GB)",
+      "brand": "realme",
+      "category": "Mobiles",
+      "price": 27999,
+      "mrp": 33999,
+      "rating": 4.1,
+      "rating_count": 43262,
+      "image_url": "https://cdn.dummyjson.com/product-images/smartphones/realme-xt/thumbnail.webp",
+      "description": "Periscope portrait camera with 3x optical zoom and a curved 120Hz display.",
+      "tags": [
+        "smartphone",
+        "5g",
+        "android",
+        "periscope camera",
+        "mobile phone"
+      ],
+      "stock": {
+        "Bengaluru": 29,
+        "Mumbai": 20,
+        "Delhi": 1,
+        "Pune": 13,
+        "Hyderabad": 27,
+        "Chennai": 23
+      }
+    },
+    {
+      "id": 12,
+      "sku": "MOB-003",
+      "name": "OPPO A79 5G (8GB RAM, 128GB)",
+      "brand": "OPPO",
+      "category": "Mobiles",
+      "price": 17499,
+      "mrp": 22999,
+      "rating": 4.1,
+      "rating_count": 47293,
+      "image_url": "https://cdn.dummyjson.com/product-images/smartphones/oppo-a57/thumbnail.webp",
+      "description": "Slim 5G phone with a 50MP AI camera and a 5000mAh battery with 33W SUPERVOOC.",
+      "tags": [
+        "smartphone",
+        "5g",
+        "android",
+        "mobile phone"
+      ],
+      "stock": {
+        "Bengaluru": 0,
+        "Mumbai": 2,
+        "Delhi": 10,
+        "Pune": 18,
+        "Hyderabad": 16,
+        "Chennai": 7
+      }
+    },
+    {
+      "id": 13,
+      "sku": "MOB-004",
+      "name": "OPPO F27 Pro+ 5G (8GB RAM, 128GB)",
+      "brand": "OPPO",
+      "category": "Mobiles",
+      "price": 22999,
+      "mrp": 27999,
+      "rating": 4.5,
+      "rating_count": 44064,
+      "image_url": "https://cdn.dummyjson.com/product-images/smartphones/oppo-f19-pro-plus/thumbnail.webp",
+      "description": "IP69 water resistant phone with a 3D curved AMOLED display and 67W fast charging.",
+      "tags": [
+        "smartphone",
+        "5g",
+        "android",
+        "waterproof",
+        "mobile phone"
+      ],
+      "stock": {
+        "Bengaluru": 16,
+        "Mumbai": 5,
+        "Delhi": 12,
+        "Pune": 0,
+        "Hyderabad": 23,
+        "Chennai": 14
+      }
+    },
+    {
+      "id": 14,
+      "sku": "MOB-005",
+      "name": "vivo T3 5G (8GB RAM, 128GB)",
+      "brand": "vivo",
+      "category": "Mobiles",
+      "price": 19999,
+      "mrp": 24999,
+      "rating": 4.2,
+      "rating_count": 10323,
+      "image_url": "https://cdn.dummyjson.com/product-images/smartphones/vivo-v9/thumbnail.webp",
+      "description": "Sony IMX882 camera with OIS, Dimensity 7200 and a 120Hz AMOLED screen.",
+      "tags": [
+        "smartphone",
+        "5g",
+        "android",
+        "mobile phone"
+      ],
+      "stock": {
+        "Bengaluru": 23,
+        "Mumbai": 18,
+        "Delhi": 19,
+        "Pune": 3,
+        "Hyderabad": 19,
+        "Chennai": 0
+      }
+    },
+    {
+      "id": 15,
+      "sku": "MOB-006",
+      "name": "vivo V30 5G (8GB RAM, 256GB)",
+      "brand": "vivo",
+      "category": "Mobiles",
+      "price": 33999,
+      "mrp": 39999,
+      "rating": 3.9,
+      "rating_count": 88616,
+      "image_url": "https://cdn.dummyjson.com/product-images/smartphones/vivo-s1/thumbnail.webp",
+      "description": "Aura Light portrait camera, 50MP eye-autofocus selfie camera and 80W FlashCharge.",
+      "tags": [
+        "smartphone",
+        "5g",
+        "android",
+        "selfie",
+        "mobile phone"
+      ],
+      "stock": {
+        "Bengaluru": 25,
+        "Mumbai": 17,
+        "Delhi": 30,
+        "Pune": 27,
+        "Hyderabad": 28,
+        "Chennai": 0
+      }
+    },
+    {
+      "id": 16,
+      "sku": "MOB-007",
+      "name": "Samsung Galaxy S24 FE 5G (8GB RAM, 128GB)",
+      "brand": "Samsung",
+      "category": "Mobiles",
+      "price": 49999,
+      "mrp": 59999,
+      "rating": 4.1,
+      "rating_count": 65704,
+      "image_url": "https://cdn.dummyjson.com/product-images/smartphones/samsung-galaxy-s10/thumbnail.webp",
+      "description": "Galaxy AI features, a 50MP triple camera and 7 years of OS upgrades.",
+      "tags": [
+        "smartphone",
+        "5g",
+        "android",
+        "galaxy ai",
+        "mobile phone"
+      ],
+      "stock": {
+        "Bengaluru": 24,
+        "Mumbai": 6,
+        "Delhi": 19,
+        "Pune": 0,
+        "Hyderabad": 28,
+        "Chennai": 20
+      }
+    },
+    {
+      "id": 17,
+      "sku": "MOB-008",
+      "name": "Samsung Galaxy M35 5G (6GB RAM, 128GB)",
+      "brand": "Samsung",
+      "category": "Mobiles",
+      "price": 16999,
+      "mrp": 24499,
+      "rating": 4.2,
+      "rating_count": 1420,
+      "image_url": "https://cdn.dummyjson.com/product-images/smartphones/samsung-galaxy-s8/thumbnail.webp",
+      "description": "6000mAh battery, Super AMOLED 120Hz display and Corning Gorilla Glass Victus+.",
+      "tags": [
+        "smartphone",
+        "5g",
+        "android",
+        "big battery",
+        "mobile phone"
+      ],
+      "stock": {
+        "Bengaluru": 7,
+        "Mumbai": 28,
+        "Delhi": 29,
+        "Pune": 0,
+        "Hyderabad": 19,
+        "Chennai": 20
+      }
+    },
+    {
+      "id": 18,
+      "sku": "MOB-009",
+      "name": "Apple iPhone 15 (128GB)",
+      "brand": "Apple",
+      "category": "Mobiles",
+      "price": 69900,
+      "mrp": 79900,
+      "rating": 4.1,
+      "rating_count": 33150,
+      "image_url": "https://cdn.dummyjson.com/product-images/smartphones/iphone-13-pro/thumbnail.webp",
+      "description": "Dynamic Island, a 48MP main camera and USB-C charging.",
+      "tags": [
+        "smartphone",
+        "ios",
+        "iphone",
+        "5g",
+        "mobile phone"
+      ],
+      "stock": {
+        "Bengaluru": 3,
+        "Mumbai": 5,
+        "Delhi": 4,
+        "Pune": 0,
+        "Hyderabad": 2,
+        "Chennai": 1
+      }
+    },
+    {
+      "id": 19,
+      "sku": "ELE-001",
+      "name": "Lenovo IdeaPad Slim 3 (Ryzen 5, 16GB, 512GB SSD)",
+      "brand": "Lenovo",
+      "category": "Electronics",
+      "price": 46990,
+      "mrp": 71690,
+      "rating": 3.8,
+      "rating_count": 5317,
+      "image_url": "https://cdn.dummyjson.com/product-images/laptops/lenovo-yoga-920/thumbnail.webp",
+      "description": "15.6-inch FHD laptop that weighs 1.6 kg, with a backlit keyboard and rapid charge.",
+      "tags": [
+        "laptop",
+        "notebook",
+        "windows",
+        "student"
+      ],
+      "stock": {
+        "Bengaluru": 21,
+        "Mumbai": 11,
+        "Delhi": 13,
+        "Pune": 16,
+        "Hyderabad": 11,
+        "Chennai": 3
+      }
+    },
+    {
+      "id": 20,
+      "sku": "ELE-002",
+      "name": "ASUS Vivobook 15 (Core i5, 16GB, 512GB SSD)",
+      "brand": "ASUS",
+      "category": "Electronics",
+      "price": 52990,
+      "mrp": 74990,
+      "rating": 3.9,
+      "rating_count": 15285,
+      "image_url": "https://cdn.dummyjson.com/product-images/laptops/asus-zenbook-pro-dual-screen-laptop/thumbnail.webp",
+      "description": "13th-gen Intel Core i5, a 180-degree hinge and a fingerprint sensor built into the touchpad.",
+      "tags": [
+        "laptop",
+        "notebook",
+        "windows",
+        "office"
+      ],
+      "stock": {
+        "Bengaluru": 23,
+        "Mumbai": 2,
+        "Delhi": 12,
+        "Pune": 17,
+        "Hyderabad": 0,
+        "Chennai": 0
+      }
+    },
+    {
+      "id": 21,
+      "sku": "ELE-003",
+      "name": "Dell Inspiron 14 (Core i5, 16GB, 512GB SSD)",
+      "brand": "Dell",
+      "category": "Electronics",
+      "price": 61490,
+      "mrp": 79999,
+      "rating": 4.2,
+      "rating_count": 53038,
+      "image_url": "https://cdn.dummyjson.com/product-images/laptops/new-dell-xps-13-9300-laptop/thumbnail.webp",
+      "description": "14-inch 2.2K display, an aluminium chassis and Windows 11 with Office included.",
+      "tags": [
+        "laptop",
+        "notebook",
+        "windows",
+        "thin and light"
+      ],
+      "stock": {
+        "Bengaluru": 17,
+        "Mumbai": 14,
+        "Delhi": 0,
+        "Pune": 12,
+        "Hyderabad": 3,
+        "Chennai": 22
+      }
+    },
+    {
+      "id": 22,
+      "sku": "ELE-004",
+      "name": "Samsung Galaxy Tab A9+ Wi-Fi (8GB, 128GB)",
+      "brand": "Samsung",
+      "category": "Electronics",
+      "price": 15999,
+      "mrp": 24999,
+      "rating": 3.9,
+      "rating_count": 13832,
+      "image_url": "https://cdn.dummyjson.com/product-images/tablets/samsung-galaxy-tab-white/thumbnail.webp",
+      "description": "11-inch 90Hz display with quad speakers, made for streaming and online classes.",
+      "tags": [
+        "tablet",
+        "android",
+        "wifi",
+        "study"
+      ],
+      "stock": {
+        "Bengaluru": 25,
+        "Mumbai": 0,
+        "Delhi": 15,
+        "Pune": 1,
+        "Hyderabad": 19,
+        "Chennai": 30
+      }
+    },
+    {
+      "id": 23,
+      "sku": "ELE-005",
+      "name": "Samsung Galaxy Tab S9 FE Wi-Fi (6GB, 128GB)",
+      "brand": "Samsung",
+      "category": "Electronics",
+      "price": 31999,
+      "mrp": 44999,
+      "rating": 4.2,
+      "rating_count": 17662,
+      "image_url": "https://cdn.dummyjson.com/product-images/tablets/samsung-galaxy-tab-s8-plus-grey/thumbnail.webp",
+      "description": "IP68 water resistant tablet with an S Pen in the box.",
+      "tags": [
+        "tablet",
+        "android",
+        "s pen",
+        "waterproof"
+      ],
+      "stock": {
+        "Bengaluru": 24,
+        "Mumbai": 17,
+        "Delhi": 15,
+        "Pune": 17,
+        "Hyderabad": 21,
+        "Chennai": 1
+      }
+    },
+    {
+      "id": 24,
+      "sku": "ELE-006",
+      "name": "Noise ColorFit Pro 5 Smartwatch with Bluetooth Calling",
+      "brand": "Noise",
+      "category": "Electronics",
+      "price": 3499,
+      "mrp": 7999,
+      "rating": 4.4,
+      "rating_count": 62364,
+      "image_url": "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-watch-series-4-gold/thumbnail.webp",
+      "description": "1.85-inch AMOLED smartwatch with Bluetooth calling, SpO2 tracking and 100+ sports modes.",
+      "tags": [
+        "smartwatch",
+        "bluetooth",
+        "calling",
+        "fitness",
+        "wearable"
+      ],
+      "stock": {
+        "Bengaluru": 0,
+        "Mumbai": 29,
+        "Delhi": 26,
+        "Pune": 29,
+        "Hyderabad": 26,
+        "Chennai": 8
+      }
+    },
+    {
+      "id": 25,
+      "sku": "ELE-007",
+      "name": "Portronics Freedom 15W Wireless Charging Pad",
+      "brand": "Portronics",
+      "category": "Electronics",
+      "price": 999,
+      "mrp": 2499,
+      "rating": 4.0,
+      "rating_count": 210,
+      "image_url": "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpower-wireless-charger/thumbnail.webp",
+      "description": "15W Qi fast wireless charger that works with Android phones and iPhones.",
+      "tags": [
+        "wireless charger",
+        "qi",
+        "charging",
+        "accessories"
+      ],
+      "stock": {
+        "Bengaluru": 11,
+        "Mumbai": 14,
+        "Delhi": 15,
+        "Pune": 0,
+        "Hyderabad": 6,
+        "Chennai": 14
+      }
+    },
+    {
+      "id": 26,
+      "sku": "ELE-008",
+      "name": "Mi 20000mAh 3i Power Bank (18W)",
+      "brand": "Xiaomi",
+      "category": "Electronics",
+      "price": 1899,
+      "mrp": 2499,
+      "rating": 3.8,
+      "rating_count": 70841,
+      "image_url": "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-magsafe-battery-pack/thumbnail.webp",
+      "description": "Triple-output power bank with 18W fast charging and 12-layer chip protection.",
+      "tags": [
+        "power bank",
+        "charging",
+        "portable",
+        "accessories"
+      ],
+      "stock": {
+        "Bengaluru": 3,
+        "Mumbai": 18,
+        "Delhi": 14,
+        "Pune": 27,
+        "Hyderabad": 7,
+        "Chennai": 15
+      }
+    },
+    {
+      "id": 27,
+      "sku": "ELE-009",
+      "name": "Ambrane 20W USB-C Fast Charger",
+      "brand": "Ambrane",
+      "category": "Electronics",
+      "price": 599,
+      "mrp": 1299,
+      "rating": 3.8,
+      "rating_count": 1976,
+      "image_url": "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-iphone-charger/thumbnail.webp",
+      "description": "20W power delivery wall charger, BIS certified for Indian sockets.",
+      "tags": [
+        "charger",
+        "usb-c",
+        "fast charging",
+        "accessories"
+      ],
+      "stock": {
+        "Bengaluru": 0,
+        "Mumbai": 26,
+        "Delhi": 24,
+        "Pune": 5,
+        "Hyderabad": 20,
+        "Chennai": 0
+      }
+    },
+    {
+      "id": 28,
+      "sku": "ELE-010",
+      "name": "Portronics Bluetooth Selfie Stick Tripod",
+      "brand": "Portronics",
+      "category": "Electronics",
+      "price": 899,
+      "mrp": 1999,
+      "rating": 4.2,
+      "rating_count": 10270,
+      "image_url": "https://cdn.dummyjson.com/product-images/mobile-accessories/selfie-stick-monopod/thumbnail.webp",
+      "description": "Foldable selfie stick that converts into a tripod, with a detachable Bluetooth remote.",
+      "tags": [
+        "bluetooth",
+        "selfie stick",
+        "tripod",
+        "accessories"
+      ],
+      "stock": {
+        "Bengaluru": 16,
+        "Mumbai": 4,
+        "Delhi": 0,
+        "Pune": 29,
+        "Hyderabad": 6,
+        "Chennai": 10
+      }
+    },
+    {
+      "id": 29,
+      "sku": "FAS-001",
+      "name": "Allen Solly Men's Checked Slim Fit Shirt",
+      "brand": "Allen Solly",
+      "category": "Fashion",
+      "price": 1299,
+      "mrp": 2199,
+      "rating": 4.3,
+      "rating_count": 41263,
+      "image_url": "https://cdn.dummyjson.com/product-images/mens-shirts/men-check-shirt/thumbnail.webp",
+      "description": "Pure cotton slim fit shirt in a classic check, ready for office or weekend.",
+      "tags": [
+        "shirt",
+        "men",
+        "casual",
+        "cotton",
+        "checks"
+      ],
+      "stock": {
+        "Bengaluru": 20,
+        "Mumbai": 12,
+        "Delhi": 15,
+        "Pune": 7,
+        "Hyderabad": 12,
+        "Chennai": 21
+      }
+    },
+    {
+      "id": 30,
+      "sku": "FAS-002",
+      "name": "Peter England Men's Plaid Casual Shirt",
+      "brand": "Peter England",
+      "category": "Fashion",
+      "price": 1099,
+      "mrp": 1999,
+      "rating": 4.6,
+      "rating_count": 7142,
+      "image_url": "https://cdn.dummyjson.com/product-images/mens-shirts/man-plaid-shirt/thumbnail.webp",
+      "description": "Soft brushed-cotton plaid shirt with a regular fit and a button-down collar.",
+      "tags": [
+        "shirt",
+        "men",
+        "casual",
+        "plaid"
+      ],
+      "stock": {
+        "Bengaluru": 20,
+        "Mumbai": 16,
+        "Delhi": 18,
+        "Pune": 29,
+        "Hyderabad": 3,
+        "Chennai": 0
+      }
+    },
+    {
+      "id": 31,
+      "sku": "FAS-003",
+      "name": "Puma Future Rider Men's Sneakers",
+      "brand": "Puma",
+      "category": "Fashion",
+      "price": 3999,
+      "mrp": 7999,
+      "rating": 4.4,
+      "rating_count": 3294,
+      "image_url": "https://cdn.dummyjson.com/product-images/mens-shoes/puma-future-rider-trainers/thumbnail.webp",
+      "description": "Retro-inspired running sneakers with a cushioned EVA midsole.",
+      "tags": [
+        "shoes",
+        "sneakers",
+        "men",
+        "casual",
+        "footwear"
+      ],
+      "stock": {
+        "Bengaluru": 29,
+        "Mumbai": 24,
+        "Delhi": 12,
+        "Pune": 16,
+        "Hyderabad": 5,
+        "Chennai": 9
+      }
+    },
+    {
+      "id": 32,
+      "sku": "FAS-004",
+      "name": "Campus North Plus Men's Running Shoes",
+      "brand": "Campus",
+      "category": "Fashion",
+      "price": 1499,
+      "mrp": 2499,
+      "rating": 4.1,
+      "rating_count": 15888,
+      "image_url": "https://cdn.dummyjson.com/product-images/mens-shoes/sports-sneakers-off-white-red/thumbnail.webp",
+      "description": "Lightweight mesh running shoes with a memory-foam insole.",
+      "tags": [
+        "shoes",
+        "running",
+        "men",
+        "sports",
+        "footwear"
+      ],
+      "stock": {
+        "Bengaluru": 2,
+        "Mumbai": 5,
+        "Delhi": 4,
+        "Pune": 2,
+        "Hyderabad": 21,
+        "Chennai": 20
+      }
+    },
+    {
+      "id": 33,
+      "sku": "FAS-005",
+      "name": "Fastrack UV Protected Wayfarer Sunglasses",
+      "brand": "Fastrack",
+      "category": "Fashion",
+      "price": 1199,
+      "mrp": 1999,
+      "rating": 4.6,
+      "rating_count": 548,
+      "image_url": "https://cdn.dummyjson.com/product-images/sunglasses/black-sun-glasses/thumbnail.webp",
+      "description": "Matte black wayfarers with 100% UV400 protection.",
+      "tags": [
+        "sunglasses",
+        "eyewear",
+        "unisex",
+        "uv protection"
+      ],
+      "stock": {
+        "Bengaluru": 25,
+        "Mumbai": 11,
+        "Delhi": 0,
+        "Pune": 8,
+        "Hyderabad": 9,
+        "Chennai": 0
+      }
+    },
+    {
+      "id": 34,
+      "sku": "FAS-006",
+      "name": "Vincent Chase Polarized Aviator Sunglasses",
+      "brand": "Vincent Chase",
+      "category": "Fashion",
+      "price": 1499,
+      "mrp": 2999,
+      "rating": 4.5,
+      "rating_count": 1414,
+      "image_url": "https://cdn.dummyjson.com/product-images/sunglasses/classic-sun-glasses/thumbnail.webp",
+      "description": "Polarized gold-frame aviators that cut glare on bright days.",
+      "tags": [
+        "sunglasses",
+        "eyewear",
+        "aviator",
+        "polarized"
+      ],
+      "stock": {
+        "Bengaluru": 11,
+        "Mumbai": 28,
+        "Delhi": 9,
+        "Pune": 4,
+        "Hyderabad": 2,
+        "Chennai": 27
+      }
+    },
+    {
+      "id": 35,
+      "sku": "FAS-007",
+      "name": "Titan Neo Analog Men's Watch (Brown Leather)",
+      "brand": "Titan",
+      "category": "Fashion",
+      "price": 4995,
+      "mrp": 6495,
+      "rating": 4.4,
+      "rating_count": 16501,
+      "image_url": "https://cdn.dummyjson.com/product-images/mens-watches/brown-leather-belt-watch/thumbnail.webp",
+      "description": "Minimal dial with a genuine brown leather strap and 50m water resistance.",
+      "tags": [
+        "watch",
+        "analog",
+        "men",
+        "leather"
+      ],
+      "stock": {
+        "Bengaluru": 1,
+        "Mumbai": 20,
+        "Delhi": 12,
+        "Pune": 2,
+        "Hyderabad": 29,
+        "Chennai": 11
+      }
+    },
+    {
+      "id": 36,
+      "sku": "FAS-008",
+      "name": "Fastrack Women's Gold-Tone Analog Watch",
+      "brand": "Fastrack",
+      "category": "Fashion",
+      "price": 2795,
+      "mrp": 3495,
+      "rating": 4.1,
+      "rating_count": 1616,
+      "image_url": "https://cdn.dummyjson.com/product-images/womens-watches/watch-gold-for-women/thumbnail.webp",
+      "description": "Slim gold-tone watch with a mesh strap and a mother-of-pearl dial.",
+      "tags": [
+        "watch",
+        "analog",
+        "women",
+        "gold"
+      ],
+      "stock": {
+        "Bengaluru": 0,
+        "Mumbai": 4,
+        "Delhi": 23,
+        "Pune": 23,
+        "Hyderabad": 29,
+        "Chennai": 8
+      }
+    },
+    {
+      "id": 37,
+      "sku": "FAS-009",
+      "name": "Lavie Women's Satchel Handbag (Black)",
+      "brand": "Lavie",
+      "category": "Fashion",
+      "price": 1799,
+      "mrp": 4499,
+      "rating": 3.9,
+      "rating_count": 1497,
+      "image_url": "https://cdn.dummyjson.com/product-images/womens-bags/women-handbag-black/thumbnail.webp",
+      "description": "Structured satchel with three compartments and a detachable sling strap.",
+      "tags": [
+        "handbag",
+        "bag",
+        "women",
+        "satchel"
+      ],
+      "stock": {
+        "Bengaluru": 0,
+        "Mumbai": 22,
+        "Delhi": 1,
+        "Pune": 29,
+        "Hyderabad": 0,
+        "Chennai": 2
+      }
+    },
+    {
+      "id": 38,
+      "sku": "FAS-010",
+      "name": "Baggit Women's Faux Leather Backpack (White)",
+      "brand": "Baggit",
+      "category": "Fashion",
+      "price": 2299,
+      "mrp": 3999,
+      "rating": 3.9,
+      "rating_count": 6904,
+      "image_url": "https://cdn.dummyjson.com/product-images/womens-bags/white-faux-leather-backpack/thumbnail.webp",
+      "description": "Vegan leather backpack with a padded laptop sleeve, made in India.",
+      "tags": [
+        "backpack",
+        "bag",
+        "women",
+        "vegan leather"
+      ],
+      "stock": {
+        "Bengaluru": 18,
+        "Mumbai": 28,
+        "Delhi": 0,
+        "Pune": 0,
+        "Hyderabad": 12,
+        "Chennai": 30
+      }
+    },
+    {
+      "id": 39,
+      "sku": "FAS-011",
+      "name": "AND Women's Grey Midi Dress",
+      "brand": "AND",
+      "category": "Fashion",
+      "price": 1799,
+      "mrp": 3299,
+      "rating": 4.3,
+      "rating_count": 502,
+      "image_url": "https://cdn.dummyjson.com/product-images/tops/gray-dress/thumbnail.webp",
+      "description": "Flowy grey midi dress with a tie waist and short sleeves.",
+      "tags": [
+        "dress",
+        "women",
+        "western",
+        "midi"
+      ],
+      "stock": {
+        "Bengaluru": 2,
+        "Mumbai": 9,
+        "Delhi": 4,
+        "Pune": 0,
+        "Hyderabad": 0,
+        "Chennai": 4
+      }
+    },
+    {
+      "id": 40,
+      "sku": "FAS-012",
+      "name": "Metro Women's Golden Party Sandals",
+      "brand": "Metro",
+      "category": "Fashion",
+      "price": 1690,
+      "mrp": 2490,
+      "rating": 4.0,
+      "rating_count": 9698,
+      "image_url": "https://cdn.dummyjson.com/product-images/womens-shoes/golden-shoes-woman/thumbnail.webp",
+      "description": "Shimmering gold block-heel sandals with a cushioned footbed.",
+      "tags": [
+        "sandals",
+        "heels",
+        "women",
+        "party",
+        "footwear"
+      ],
+      "stock": {
+        "Bengaluru": 0,
+        "Mumbai": 2,
+        "Delhi": 29,
+        "Pune": 23,
+        "Hyderabad": 16,
+        "Chennai": 11
+      }
+    },
+    {
+      "id": 41,
+      "sku": "FAS-013",
+      "name": "Voylla Green Crystal Drop Earrings",
+      "brand": "Voylla",
+      "category": "Fashion",
+      "price": 599,
+      "mrp": 1299,
+      "rating": 4.2,
+      "rating_count": 1048,
+      "image_url": "https://cdn.dummyjson.com/product-images/womens-jewellery/green-crystal-earring/thumbnail.webp",
+      "description": "Emerald-green crystal drops in an antique gold finish for festive evenings.",
+      "tags": [
+        "earrings",
+        "jewellery",
+        "women",
+        "festive"
+      ],
+      "stock": {
+        "Bengaluru": 10,
+        "Mumbai": 27,
+        "Delhi": 28,
+        "Pune": 20,
+        "Hyderabad": 10,
+        "Chennai": 18
+      }
+    },
+    {
+      "id": 42,
+      "sku": "HOM-001",
+      "name": "IFB 20L Solo Microwave Oven",
+      "brand": "IFB",
+      "category": "Home & Kitchen",
+      "price": 6290,
+      "mrp": 8490,
+      "rating": 4.0,
+      "rating_count": 3800,
+      "image_url": "https://cdn.dummyjson.com/product-images/kitchen-accessories/microwave-oven/thumbnail.webp",
+      "description": "20-litre solo microwave with 51 auto-cook menus and a child lock.",
+      "tags": [
+        "microwave",
+        "oven",
+        "kitchen appliance"
+      ],
+      "stock": {
+        "Bengaluru": 13,
+        "Mumbai": 19,
+        "Delhi": 14,
+        "Pune": 27,
+        "Hyderabad": 19,
+        "Chennai": 6
+      }
+    },
+    {
+      "id": 43,
+      "sku": "HOM-002",
+      "name": "Prestige PIC 20 Induction Cooktop (1600W)",
+      "brand": "Prestige",
+      "category": "Home & Kitchen",
+      "price": 2099,
+      "mrp": 3195,
+      "rating": 4.6,
+      "rating_count": 864,
+      "image_url": "https://cdn.dummyjson.com/product-images/kitchen-accessories/electric-stove/thumbnail.webp",
+      "description": "1600W induction cooktop with Indian menu presets and automatic voltage regulation.",
+      "tags": [
+        "induction",
+        "cooktop",
+        "stove",
+        "kitchen appliance"
+      ],
+      "stock": {
+        "Bengaluru": 5,
+        "Mumbai": 12,
+        "Delhi": 28,
+        "Pune": 18,
+        "Hyderabad": 13,
+        "Chennai": 16
+      }
+    },
+    {
+      "id": 44,
+      "sku": "HOM-003",
+      "name": "Philips HL7756 Mixer Grinder (750W, 3 Jars)",
+      "brand": "Philips",
+      "category": "Home & Kitchen",
+      "price": 3699,
+      "mrp": 6295,
+      "rating": 4.4,
+      "rating_count": 78499,
+      "image_url": "https://cdn.dummyjson.com/product-images/kitchen-accessories/boxed-blender/thumbnail.webp",
+      "description": "750W turbo motor with three stainless steel jars for chutneys, masalas and batter.",
+      "tags": [
+        "mixer",
+        "grinder",
+        "blender",
+        "kitchen appliance"
+      ],
+      "stock": {
+        "Bengaluru": 5,
+        "Mumbai": 26,
+        "Delhi": 0,
+        "Pune": 0,
+        "Hyderabad": 3,
+        "Chennai": 0
+      }
+    },
+    {
+      "id": 45,
+      "sku": "HOM-004",
+      "name": "Bajaj HB 25 Hand Blender (250W)",
+      "brand": "Bajaj",
+      "category": "Home & Kitchen",
+      "price": 1099,
+      "mrp": 1650,
+      "rating": 4.5,
+      "rating_count": 3238,
+      "image_url": "https://cdn.dummyjson.com/product-images/kitchen-accessories/hand-blender/thumbnail.webp",
+      "description": "Detachable stainless steel blade for lassi, soups and purees.",
+      "tags": [
+        "hand blender",
+        "blender",
+        "kitchen appliance"
+      ],
+      "stock": {
+        "Bengaluru": 28,
+        "Mumbai": 0,
+        "Delhi": 0,
+        "Pune": 19,
+        "Hyderabad": 25,
+        "Chennai": 3
+      }
+    },
+    {
+      "id": 46,
+      "sku": "HOM-005",
+      "name": "Prestige Omega Deluxe Non-Stick Fry Pan (24cm)",
+      "brand": "Prestige",
+      "category": "Home & Kitchen",
+      "price": 849,
+      "mrp": 1345,
+      "rating": 4.2,
+      "rating_count": 18169,
+      "image_url": "https://cdn.dummyjson.com/product-images/kitchen-accessories/pan/thumbnail.webp",
+      "description": "Granite-finish non-stick pan that works on gas and induction.",
+      "tags": [
+        "fry pan",
+        "non-stick",
+        "cookware"
+      ],
+      "stock": {
+        "Bengaluru": 10,
+        "Mumbai": 0,
+        "Delhi": 5,
+        "Pune": 24,
+        "Hyderabad": 28,
+        "Chennai": 0
+      }
+    },
+    {
+      "id": 47,
+      "sku": "HOM-006",
+      "name": "Hawkins Futura Hard Anodised Kadhai (2.5L)",
+      "brand": "Hawkins",
+      "category": "Home & Kitchen",
+      "price": 1975,
+      "mrp": 2350,
+      "rating": 3.9,
+      "rating_count": 10495,
+      "image_url": "https://cdn.dummyjson.com/product-images/kitchen-accessories/carbon-steel-wok/thumbnail.webp",
+      "description": "Thick hard-anodised kadhai with a stay-cool handle, made for everyday Indian cooking.",
+      "tags": [
+        "kadhai",
+        "wok",
+        "cookware"
+      ],
+      "stock": {
+        "Bengaluru": 15,
+        "Mumbai": 8,
+        "Delhi": 6,
+        "Pune": 0,
+        "Hyderabad": 25,
+        "Chennai": 18
+      }
+    },
+    {
+      "id": 48,
+      "sku": "HOM-007",
+      "name": "Milton Steel Combi Lunch Box (3 Containers)",
+      "brand": "Milton",
+      "category": "Home & Kitchen",
+      "price": 549,
+      "mrp": 899,
+      "rating": 4.0,
+      "rating_count": 28090,
+      "image_url": "https://cdn.dummyjson.com/product-images/kitchen-accessories/lunch-box/thumbnail.webp",
+      "description": "Leak-proof stainless steel tiffin with an insulated fabric jacket.",
+      "tags": [
+        "lunch box",
+        "tiffin",
+        "steel",
+        "office"
+      ],
+      "stock": {
+        "Bengaluru": 0,
+        "Mumbai": 1,
+        "Delhi": 10,
+        "Pune": 0,
+        "Hyderabad": 0,
+        "Chennai": 0
+      }
+    },
+    {
+      "id": 49,
+      "sku": "HOM-008",
+      "name": "Borosil Vision Glass Tumbler (Set of 6)",
+      "brand": "Borosil",
+      "category": "Home & Kitchen",
+      "price": 449,
+      "mrp": 600,
+      "rating": 4.6,
+      "rating_count": 1493,
+      "image_url": "https://cdn.dummyjson.com/product-images/kitchen-accessories/glass/thumbnail.webp",
+      "description": "Microwave-safe borosilicate glasses that resist thermal shock.",
+      "tags": [
+        "glass",
+        "tumbler",
+        "drinkware"
+      ],
+      "stock": {
+        "Bengaluru": 21,
+        "Mumbai": 1,
+        "Delhi": 0,
+        "Pune": 0,
+        "Hyderabad": 7,
+        "Chennai": 1
+      }
+    },
+    {
+      "id": 50,
+      "sku": "HOM-009",
+      "name": "Wakefit Engineered Wood Bedside Table",
+      "brand": "Wakefit",
+      "category": "Home & Kitchen",
+      "price": 3499,
+      "mrp": 6999,
+      "rating": 4.1,
+      "rating_count": 15721,
+      "image_url": "https://cdn.dummyjson.com/product-images/furniture/bedside-table-african-cherry/thumbnail.webp",
+      "description": "Compact bedside table with a drawer and an open shelf.",
+      "tags": [
+        "bedside table",
+        "furniture",
+        "bedroom"
+      ],
+      "stock": {
+        "Bengaluru": 6,
+        "Mumbai": 9,
+        "Delhi": 5,
+        "Pune": 17,
+        "Hyderabad": 15,
+        "Chennai": 6
+      }
+    },
+    {
+      "id": 51,
+      "sku": "HOM-010",
+      "name": "Green Soul Monster Ergonomic Office Chair",
+      "brand": "Green Soul",
+      "category": "Home & Kitchen",
+      "price": 11999,
+      "mrp": 21999,
+      "rating": 3.8,
+      "rating_count": 81802,
+      "image_url": "https://cdn.dummyjson.com/product-images/furniture/knoll-saarinen-executive-conference-chair/thumbnail.webp",
+      "description": "Ergonomic chair with adjustable lumbar support, 4D armrests and recline lock.",
+      "tags": [
+        "office chair",
+        "ergonomic",
+        "furniture",
+        "work from home"
+      ],
+      "stock": {
+        "Bengaluru": 0,
+        "Mumbai": 4,
+        "Delhi": 0,
+        "Pune": 30,
+        "Hyderabad": 26,
+        "Chennai": 28
+      }
+    },
+    {
+      "id": 52,
+      "sku": "HOM-011",
+      "name": "Ugaoo Ceramic Plant Pot (Set of 2)",
+      "brand": "Ugaoo",
+      "category": "Home & Kitchen",
+      "price": 699,
+      "mrp": 1199,
+      "rating": 4.6,
+      "rating_count": 1424,
+      "image_url": "https://cdn.dummyjson.com/product-images/home-decoration/plant-pot/thumbnail.webp",
+      "description": "Matte ceramic planters with drainage holes for indoor plants.",
+      "tags": [
+        "plant pot",
+        "planter",
+        "decor",
+        "garden"
+      ],
+      "stock": {
+        "Bengaluru": 10,
+        "Mumbai": 2,
+        "Delhi": 2,
+        "Pune": 29,
+        "Hyderabad": 28,
+        "Chennai": 13
+      }
+    },
+    {
+      "id": 53,
+      "sku": "HOM-012",
+      "name": "Philips LED Table Lamp",
+      "brand": "Philips",
+      "category": "Home & Kitchen",
+      "price": 1299,
+      "mrp": 1999,
+      "rating": 4.4,
+      "rating_count": 13818,
+      "image_url": "https://cdn.dummyjson.com/product-images/home-decoration/table-lamp/thumbnail.webp",
+      "description": "Warm LED table lamp with a fabric shade for bedside or study desk.",
+      "tags": [
+        "table lamp",
+        "lamp",
+        "led",
+        "decor",
+        "study"
+      ],
+      "stock": {
+        "Bengaluru": 22,
+        "Mumbai": 6,
+        "Delhi": 19,
+        "Pune": 0,
+        "Hyderabad": 1,
+        "Chennai": 15
+      }
+    },
+    {
+      "id": 54,
+      "sku": "GRO-001",
+      "name": "India Gate Basmati Rice Classic (5kg)",
+      "brand": "India Gate",
+      "category": "Grocery",
+      "price": 899,
+      "mrp": 1050,
+      "rating": 3.9,
+      "rating_count": 1841,
+      "image_url": "https://cdn.dummyjson.com/product-images/groceries/rice/thumbnail.webp",
+      "description": "Aged long-grain basmati rice that cooks fluffy for biryani and pulao.",
+      "tags": [
+        "rice",
+        "basmati",
+        "staples"
+      ],
+      "stock": {
+        "Bengaluru": 32,
+        "Mumbai": 42,
+        "Delhi": 40,
+        "Pune": 0,
+        "Hyderabad": 1,
+        "Chennai": 51
+      }
+    },
+    {
+      "id": 55,
+      "sku": "GRO-002",
+      "name": "Fortune Sunlite Refined Sunflower Oil (1L)",
+      "brand": "Fortune",
+      "category": "Grocery",
+      "price": 155,
+      "mrp": 190,
+      "rating": 3.9,
+      "rating_count": 8807,
+      "image_url": "https://cdn.dummyjson.com/product-images/groceries/cooking-oil/thumbnail.webp",
+      "description": "Light refined sunflower oil, rich in vitamins A and D.",
+      "tags": [
+        "oil",
+        "sunflower oil",
+        "cooking oil",
+        "staples"
+      ],
+      "stock": {
+        "Bengaluru": 51,
+        "Mumbai": 50,
+        "Delhi": 10,
+        "Pune": 46,
+        "Hyderabad": 47,
+        "Chennai": 44
+      }
+    },
+    {
+      "id": 56,
+      "sku": "GRO-003",
+      "name": "Dabur Honey (500g)",
+      "brand": "Dabur",
+      "category": "Grocery",
+      "price": 229,
+      "mrp": 275,
+      "rating": 3.9,
+      "rating_count": 14111,
+      "image_url": "https://cdn.dummyjson.com/product-images/groceries/honey-jar/thumbnail.webp",
+      "description": "India's No. 1 honey brand, NMR-tested for purity.",
+      "tags": [
+        "honey",
+        "breakfast",
+        "healthy"
+      ],
+      "stock": {
+        "Bengaluru": 43,
+        "Mumbai": 42,
+        "Delhi": 50,
+        "Pune": 8,
+        "Hyderabad": 34,
+        "Chennai": 0
+      }
+    },
+    {
+      "id": 57,
+      "sku": "GRO-004",
+      "name": "Amul Taaza Toned Milk (1L)",
+      "brand": "Amul",
+      "category": "Grocery",
+      "price": 68,
+      "mrp": 68,
+      "rating": 4.5,
+      "rating_count": 7276,
+      "image_url": "https://cdn.dummyjson.com/product-images/groceries/milk/thumbnail.webp",
+      "description": "Homogenised toned milk in a long-life Tetra Pak.",
+      "tags": [
+        "milk",
+        "dairy",
+        "daily essentials"
+      ],
+      "stock": {
+        "Bengaluru": 18,
+        "Mumbai": 20,
+        "Delhi": 0,
+        "Pune": 30,
+        "Hyderabad": 33,
+        "Chennai": 38
+      }
+    },
+    {
+      "id": 58,
+      "sku": "GRO-005",
+      "name": "Nescafe Classic Instant Coffee (100g)",
+      "brand": "Nescafe",
+      "category": "Grocery",
+      "price": 345,
+      "mrp": 380,
+      "rating": 4.0,
+      "rating_count": 33414,
+      "image_url": "https://cdn.dummyjson.com/product-images/groceries/nescafe-coffee/thumbnail.webp",
+      "description": "Rich, aromatic instant coffee made from carefully roasted beans.",
+      "tags": [
+        "coffee",
+        "instant coffee",
+        "beverages"
+      ],
+      "stock": {
+        "Bengaluru": 13,
+        "Mumbai": 1,
+        "Delhi": 0,
+        "Pune": 34,
+        "Hyderabad": 0,
+        "Chennai": 37
+      }
+    },
+    {
+      "id": 59,
+      "sku": "GRO-006",
+      "name": "Real Fruit Power Mixed Fruit Juice (1L)",
+      "brand": "Real",
+      "category": "Grocery",
+      "price": 115,
+      "mrp": 130,
+      "rating": 3.8,
+      "rating_count": 51412,
+      "image_url": "https://cdn.dummyjson.com/product-images/groceries/juice/thumbnail.webp",
+      "description": "Juice blended from nine fruits, with no added preservatives.",
+      "tags": [
+        "juice",
+        "fruit juice",
+        "beverages"
+      ],
+      "stock": {
+        "Bengaluru": 30,
+        "Mumbai": 45,
+        "Delhi": 54,
+        "Pune": 3,
+        "Hyderabad": 7,
+        "Chennai": 4
+      }
+    },
+    {
+      "id": 60,
+      "sku": "GRO-007",
+      "name": "Fresho Mahabaleshwar Strawberries (200g)",
+      "brand": "Fresho",
+      "category": "Grocery",
+      "price": 89,
+      "mrp": 120,
+      "rating": 4.0,
+      "rating_count": 154,
+      "image_url": "https://cdn.dummyjson.com/product-images/groceries/strawberry/thumbnail.webp",
+      "description": "Sweet, juicy strawberries sourced from Mahabaleshwar farms.",
+      "tags": [
+        "strawberry",
+        "fruits",
+        "fresh"
+      ],
+      "stock": {
+        "Bengaluru": 55,
+        "Mumbai": 51,
+        "Delhi": 11,
+        "Pune": 37,
+        "Hyderabad": 0,
+        "Chennai": 13
+      }
+    },
+    {
+      "id": 61,
+      "sku": "GRO-008",
+      "name": "Fresho Shimla Apples (1kg)",
+      "brand": "Fresho",
+      "category": "Grocery",
+      "price": 199,
+      "mrp": 240,
+      "rating": 4.2,
+      "rating_count": 6224,
+      "image_url": "https://cdn.dummyjson.com/product-images/groceries/apple/thumbnail.webp",
+      "description": "Crisp red apples from Himachal Pradesh orchards.",
+      "tags": [
+        "apple",
+        "fruits",
+        "fresh"
+      ],
+      "stock": {
+        "Bengaluru": 4,
+        "Mumbai": 12,
+        "Delhi": 26,
+        "Pune": 35,
+        "Hyderabad": 21,
+        "Chennai": 33
+      }
+    },
+    {
+      "id": 62,
+      "sku": "GRO-009",
+      "name": "Fresho Onions (1kg)",
+      "brand": "Fresho",
+      "category": "Grocery",
+      "price": 39,
+      "mrp": 55,
+      "rating": 3.9,
+      "rating_count": 29672,
+      "image_url": "https://cdn.dummyjson.com/product-images/groceries/red-onions/thumbnail.webp",
+      "description": "Farm-fresh red onions, sorted and cleaned.",
+      "tags": [
+        "onion",
+        "vegetables",
+        "fresh"
+      ],
+      "stock": {
+        "Bengaluru": 0,
+        "Mumbai": 8,
+        "Delhi": 0,
+        "Pune": 54,
+        "Hyderabad": 0,
+        "Chennai": 27
+      }
+    },
+    {
+      "id": 63,
+      "sku": "GRO-010",
+      "name": "Eggoz Farm Fresh Eggs (Pack of 12)",
+      "brand": "Eggoz",
+      "category": "Grocery",
+      "price": 96,
+      "mrp": 110,
+      "rating": 4.0,
+      "rating_count": 72689,
+      "image_url": "https://cdn.dummyjson.com/product-images/groceries/eggs/thumbnail.webp",
+      "description": "Antibiotic-residue-free brown eggs from Eggoz farms.",
+      "tags": [
+        "eggs",
+        "protein",
+        "breakfast"
+      ],
+      "stock": {
+        "Bengaluru": 40,
+        "Mumbai": 51,
+        "Delhi": 2,
+        "Pune": 44,
+        "Hyderabad": 51,
+        "Chennai": 11
+      }
+    },
+    {
+      "id": 64,
+      "sku": "GRO-011",
+      "name": "Amul Vanilla Magic Ice Cream (1L)",
+      "brand": "Amul",
+      "category": "Grocery",
+      "price": 199,
+      "mrp": 220,
+      "rating": 4.0,
+      "rating_count": 14030,
+      "image_url": "https://cdn.dummyjson.com/product-images/groceries/ice-cream/thumbnail.webp",
+      "description": "Creamy vanilla ice cream made with real milk.",
+      "tags": [
+        "ice cream",
+        "dessert",
+        "frozen"
+      ],
+      "stock": {
+        "Bengaluru": 0,
+        "Mumbai": 0,
+        "Delhi": 22,
+        "Pune": 33,
+        "Hyderabad": 28,
+        "Chennai": 6
+      }
+    },
+    {
+      "id": 65,
+      "sku": "GRO-012",
+      "name": "Bisleri Mineral Water (1L, Pack of 12)",
+      "brand": "Bisleri",
+      "category": "Grocery",
+      "price": 216,
+      "mrp": 240,
+      "rating": 4.5,
+      "rating_count": 45928,
+      "image_url": "https://cdn.dummyjson.com/product-images/groceries/water/thumbnail.webp",
+      "description": "Packaged drinking water with added minerals, 12 bottles.",
+      "tags": [
+        "water",
+        "mineral water",
+        "beverages"
+      ],
+      "stock": {
+        "Bengaluru": 0,
+        "Mumbai": 41,
+        "Delhi": 15,
+        "Pune": 15,
+        "Hyderabad": 20,
+        "Chennai": 0
+      }
+    },
+    {
+      "id": 66,
+      "sku": "BEA-001",
+      "name": "Maybelline Lash Sensational Mascara",
+      "brand": "Maybelline",
+      "category": "Beauty",
+      "price": 549,
+      "mrp": 799,
+      "rating": 4.5,
+      "rating_count": 71297,
+      "image_url": "https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/thumbnail.webp",
+      "description": "Fanning brush that lifts and separates every lash.",
+      "tags": [
+        "mascara",
+        "makeup",
+        "eyes"
+      ],
+      "stock": {
+        "Bengaluru": 21,
+        "Mumbai": 25,
+        "Delhi": 22,
+        "Pune": 0,
+        "Hyderabad": 26,
+        "Chennai": 13
+      }
+    },
+    {
+      "id": 67,
+      "sku": "BEA-002",
+      "name": "Lakme 9to5 Primer + Matte Lipstick (Red)",
+      "brand": "Lakme",
+      "category": "Beauty",
+      "price": 499,
+      "mrp": 675,
+      "rating": 3.8,
+      "rating_count": 59389,
+      "image_url": "https://cdn.dummyjson.com/product-images/beauty/red-lipstick/thumbnail.webp",
+      "description": "Primer-infused matte red that stays put for up to 16 hours.",
+      "tags": [
+        "lipstick",
+        "makeup",
+        "lips",
+        "matte"
+      ],
+      "stock": {
+        "Bengaluru": 19,
+        "Mumbai": 8,
+        "Delhi": 10,
+        "Pune": 13,
+        "Hyderabad": 23,
+        "Chennai": 24
+      }
+    },
+    {
+      "id": 68,
+      "sku": "BEA-003",
+      "name": "SUGAR Tip Tac Toe Nail Lacquer (Red)",
+      "brand": "SUGAR",
+      "category": "Beauty",
+      "price": 199,
+      "mrp": 299,
+      "rating": 4.1,
+      "rating_count": 86200,
+      "image_url": "https://cdn.dummyjson.com/product-images/beauty/red-nail-polish/thumbnail.webp",
+      "description": "Chip-resistant, high-shine red nail colour.",
+      "tags": [
+        "nail polish",
+        "makeup",
+        "nails"
+      ],
+      "stock": {
+        "Bengaluru": 27,
+        "Mumbai": 5,
+        "Delhi": 3,
+        "Pune": 28,
+        "Hyderabad": 28,
+        "Chennai": 21
+      }
+    },
+    {
+      "id": 69,
+      "sku": "BEA-004",
+      "name": "Swiss Beauty Ultimate Eyeshadow Palette",
+      "brand": "Swiss Beauty",
+      "category": "Beauty",
+      "price": 349,
+      "mrp": 599,
+      "rating": 4.6,
+      "rating_count": 6967,
+      "image_url": "https://cdn.dummyjson.com/product-images/beauty/eyeshadow-palette-with-mirror/thumbnail.webp",
+      "description": "Nine blendable matte and shimmer shades with a built-in mirror.",
+      "tags": [
+        "eyeshadow",
+        "makeup",
+        "eyes",
+        "palette"
+      ],
+      "stock": {
+        "Bengaluru": 7,
+        "Mumbai": 19,
+        "Delhi": 17,
+        "Pune": 0,
+        "Hyderabad": 20,
+        "Chennai": 1
+      }
+    },
+    {
+      "id": 70,
+      "sku": "BEA-005",
+      "name": "Mamaearth Ubtan Body Wash (300ml)",
+      "brand": "Mamaearth",
+      "category": "Beauty",
+      "price": 299,
+      "mrp": 399,
+      "rating": 4.1,
+      "rating_count": 21840,
+      "image_url": "https://cdn.dummyjson.com/product-images/skin-care/olay-ultra-moisture-shea-butter-body-wash/thumbnail.webp",
+      "description": "Turmeric and saffron body wash for a brighter glow.",
+      "tags": [
+        "body wash",
+        "skincare",
+        "ubtan",
+        "bath"
+      ],
+      "stock": {
+        "Bengaluru": 8,
+        "Mumbai": 1,
+        "Delhi": 2,
+        "Pune": 2,
+        "Hyderabad": 0,
+        "Chennai": 0
+      }
+    },
+    {
+      "id": 71,
+      "sku": "BEA-006",
+      "name": "Himalaya Purifying Neem Hand Wash (250ml)",
+      "brand": "Himalaya",
+      "category": "Beauty",
+      "price": 99,
+      "mrp": 125,
+      "rating": 3.9,
+      "rating_count": 1768,
+      "image_url": "https://cdn.dummyjson.com/product-images/skin-care/attitude-super-leaves-hand-soap/thumbnail.webp",
+      "description": "Neem and turmeric hand wash that removes germs gently.",
+      "tags": [
+        "hand wash",
+        "neem",
+        "hygiene"
+      ],
+      "stock": {
+        "Bengaluru": 29,
+        "Mumbai": 0,
+        "Delhi": 0,
+        "Pune": 20,
+        "Hyderabad": 28,
+        "Chennai": 12
+      }
+    },
+    {
+      "id": 72,
+      "sku": "BEA-007",
+      "name": "Fogg Scent Xpressio Eau de Parfum (100ml)",
+      "brand": "Fogg",
+      "category": "Beauty",
+      "price": 499,
+      "mrp": 699,
+      "rating": 4.5,
+      "rating_count": 22943,
+      "image_url": "https://cdn.dummyjson.com/product-images/fragrances/calvin-klein-ck-one/thumbnail.webp",
+      "description": "Long-lasting woody fragrance for everyday wear.",
+      "tags": [
+        "perfume",
+        "fragrance",
+        "men"
+      ],
+      "stock": {
+        "Bengaluru": 12,
+        "Mumbai": 1,
+        "Delhi": 6,
+        "Pune": 25,
+        "Hyderabad": 23,
+        "Chennai": 18
+      }
+    },
+    {
+      "id": 73,
+      "sku": "BEA-008",
+      "name": "Nivea Men Face & Body Lotion (200ml)",
+      "brand": "Nivea",
+      "category": "Beauty",
+      "price": 299,
+      "mrp": 399,
+      "rating": 4.1,
+      "rating_count": 29345,
+      "image_url": "https://cdn.dummyjson.com/product-images/skin-care/vaseline-men-body-and-face-lotion/thumbnail.webp",
+      "description": "Non-greasy lotion that keeps skin hydrated for 24 hours.",
+      "tags": [
+        "lotion",
+        "moisturiser",
+        "skincare",
+        "men"
+      ],
+      "stock": {
+        "Bengaluru": 30,
+        "Mumbai": 19,
+        "Delhi": 10,
+        "Pune": 1,
+        "Hyderabad": 0,
+        "Chennai": 0
+      }
+    },
+    {
+      "id": 74,
+      "sku": "SPO-001",
+      "name": "SG RSD Spark Kashmir Willow Cricket Bat",
+      "brand": "SG",
+      "category": "Sports",
+      "price": 1599,
+      "mrp": 2499,
+      "rating": 4.4,
+      "rating_count": 901,
+      "image_url": "https://cdn.dummyjson.com/product-images/sports-accessories/cricket-bat/thumbnail.webp",
+      "description": "Full-size Kashmir willow bat with a cane handle, ready to play.",
+      "tags": [
+        "cricket",
+        "bat",
+        "kashmir willow"
+      ],
+      "stock": {
+        "Bengaluru": 27,
+        "Mumbai": 0,
+        "Delhi": 26,
+        "Pune": 18,
+        "Hyderabad": 9,
+        "Chennai": 16
+      }
+    },
+    {
+      "id": 75,
+      "sku": "SPO-002",
+      "name": "SG Club Leather Cricket Ball",
+      "brand": "SG",
+      "category": "Sports",
+      "price": 449,
+      "mrp": 599,
+      "rating": 4.1,
+      "rating_count": 3479,
+      "image_url": "https://cdn.dummyjson.com/product-images/sports-accessories/cricket-ball/thumbnail.webp",
+      "description": "Four-piece leather ball for club matches and nets practice.",
+      "tags": [
+        "cricket",
+        "ball",
+        "leather"
+      ],
+      "stock": {
+        "Bengaluru": 22,
+        "Mumbai": 2,
+        "Delhi": 7,
+        "Pune": 0,
+        "Hyderabad": 0,
+        "Chennai": 29
+      }
+    },
+    {
+      "id": 76,
+      "sku": "SPO-003",
+      "name": "SG Aerotech Cricket Helmet",
+      "brand": "SG",
+      "category": "Sports",
+      "price": 1499,
+      "mrp": 2199,
+      "rating": 4.1,
+      "rating_count": 186,
+      "image_url": "https://cdn.dummyjson.com/product-images/sports-accessories/cricket-helmet/thumbnail.webp",
+      "description": "Lightweight helmet with a steel grille and padded liner.",
+      "tags": [
+        "cricket",
+        "helmet",
+        "protective gear"
+      ],
+      "stock": {
+        "Bengaluru": 28,
+        "Mumbai": 28,
+        "Delhi": 23,
+        "Pune": 28,
+        "Hyderabad": 2,
+        "Chennai": 15
+      }
+    },
+    {
+      "id": 77,
+      "sku": "SPO-004",
+      "name": "Yonex Aerosensa 20 Feather Shuttlecock (Pack of 12)",
+      "brand": "Yonex",
+      "category": "Sports",
+      "price": 1450,
+      "mrp": 1750,
+      "rating": 4.3,
+      "rating_count": 13177,
+      "image_url": "https://cdn.dummyjson.com/product-images/sports-accessories/feather-shuttlecock/thumbnail.webp",
+      "description": "Tournament-grade feather shuttles with true, stable flight.",
+      "tags": [
+        "badminton",
+        "shuttlecock",
+        "feather"
+      ],
+      "stock": {
+        "Bengaluru": 2,
+        "Mumbai": 10,
+        "Delhi": 16,
+        "Pune": 25,
+        "Hyderabad": 20,
+        "Chennai": 20
+      }
+    },
+    {
+      "id": 78,
+      "sku": "SPO-005",
+      "name": "Nivia Storm Football (Size 5)",
+      "brand": "Nivia",
+      "category": "Sports",
+      "price": 549,
+      "mrp": 799,
+      "rating": 3.9,
+      "rating_count": 1030,
+      "image_url": "https://cdn.dummyjson.com/product-images/sports-accessories/football/thumbnail.webp",
+      "description": "Machine-stitched rubberised football for all surfaces.",
+      "tags": [
+        "football",
+        "ball",
+        "outdoor"
+      ],
+      "stock": {
+        "Bengaluru": 3,
+        "Mumbai": 0,
+        "Delhi": 25,
+        "Pune": 13,
+        "Hyderabad": 2,
+        "Chennai": 30
+      }
+    },
+    {
+      "id": 79,
+      "sku": "SPO-006",
+      "name": "Cosco Volleyball (Official Size)",
+      "brand": "Cosco",
+      "category": "Sports",
+      "price": 699,
+      "mrp": 950,
+      "rating": 4.2,
+      "rating_count": 42479,
+      "image_url": "https://cdn.dummyjson.com/product-images/sports-accessories/volleyball/thumbnail.webp",
+      "description": "Soft-touch volleyball with a butyl bladder that holds air.",
+      "tags": [
+        "volleyball",
+        "ball",
+        "outdoor"
+      ],
+      "stock": {
+        "Bengaluru": 23,
+        "Mumbai": 2,
+        "Delhi": 14,
+        "Pune": 18,
+        "Hyderabad": 17,
+        "Chennai": 15
+      }
+    },
+    {
+      "id": 80,
+      "sku": "SPO-007",
+      "name": "Head Ti. Reward Tennis Racquet",
+      "brand": "Head",
+      "category": "Sports",
+      "price": 2199,
+      "mrp": 3499,
+      "rating": 4.4,
+      "rating_count": 1775,
+      "image_url": "https://cdn.dummyjson.com/product-images/sports-accessories/tennis-racket/thumbnail.webp",
+      "description": "Titanium-frame racquet with a large sweet spot for beginners.",
+      "tags": [
+        "tennis",
+        "racquet",
+        "racket"
+      ],
+      "stock": {
+        "Bengaluru": 16,
+        "Mumbai": 15,
+        "Delhi": 8,
+        "Pune": 11,
+        "Hyderabad": 21,
+        "Chennai": 12
+      }
+    },
+    {
+      "id": 81,
+      "sku": "SPO-008",
+      "name": "Nivia Engraver Basketball (Size 7)",
+      "brand": "Nivia",
+      "category": "Sports",
+      "price": 699,
+      "mrp": 1099,
+      "rating": 4.2,
+      "rating_count": 28755,
+      "image_url": "https://cdn.dummyjson.com/product-images/sports-accessories/basketball/thumbnail.webp",
+      "description": "Deep-channel grip basketball for indoor and outdoor courts.",
+      "tags": [
+        "basketball",
+        "ball",
+        "outdoor"
+      ],
+      "stock": {
+        "Bengaluru": 3,
+        "Mumbai": 11,
+        "Delhi": 1,
+        "Pune": 23,
+        "Hyderabad": 23,
+        "Chennai": 2
+      }
+    },
+    {
+      "id": 82,
+      "sku": "SPO-009",
+      "name": "MuscleBlaze Raw Whey Protein (1kg, Unflavoured)",
+      "brand": "MuscleBlaze",
+      "category": "Sports",
+      "price": 1899,
+      "mrp": 2999,
+      "rating": 4.0,
+      "rating_count": 25895,
+      "image_url": "https://cdn.dummyjson.com/product-images/groceries/protein-powder/thumbnail.webp",
+      "description": "24g protein per serving, lab-tested for label accuracy.",
+      "tags": [
+        "protein",
+        "whey",
+        "fitness",
+        "gym"
+      ],
+      "stock": {
+        "Bengaluru": 27,
+        "Mumbai": 6,
+        "Delhi": 18,
+        "Pune": 4,
+        "Hyderabad": 19,
+        "Chennai": 6
+      }
+    }
+  ]
+}
