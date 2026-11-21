@@ -35,13 +35,19 @@ function StockLine({ inCity, city, stockByCity }) {
   )
 }
 
-export default function ProductCard({ product, onAdd }) {
+export default function ProductCard({ product, onAdd, cartQty = 0 }) {
   const [imageFailed, setImageFailed] = useState(false)
   const {
     name, brand, price, mrp, discount_pct, rating, rating_count,
     image_url, stock_in_city, stock_by_city, city,
   } = product
   const out = stock_in_city === 0
+  const allInCart = !out && cartQty >= Math.min(stock_in_city, 10)
+
+  let buttonLabel = 'Add to cart'
+  if (out) buttonLabel = 'Out of stock'
+  else if (allInCart) buttonLabel = `All ${cartQty} in your cart`
+  else if (cartQty > 0) buttonLabel = `Add one more (${cartQty} in cart)`
 
   return (
     <article className={`card${out ? ' card--out' : ''}`}>
@@ -68,8 +74,13 @@ export default function ProductCard({ product, onAdd }) {
         </p>
         <StockLine inCity={stock_in_city} city={city} stockByCity={stock_by_city} />
         {onAdd && (
-          <button type="button" className="btn btn--primary card__add" disabled={out} onClick={() => onAdd(product)}>
-            {out ? 'Out of stock' : 'Add to cart'}
+          <button
+            type="button"
+            className={`btn card__add ${cartQty > 0 ? 'btn--ghost' : 'btn--primary'}`}
+            disabled={out || allInCart}
+            onClick={() => onAdd(product)}
+          >
+            {buttonLabel}
           </button>
         )}
       </div>

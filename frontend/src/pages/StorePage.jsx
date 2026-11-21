@@ -30,7 +30,7 @@ function SkeletonGrid() {
   )
 }
 
-export default function StorePage({ query, onClearQuery, city, onCityChange, onAddToCart }) {
+export default function StorePage({ query, onClearQuery, city, onCityChange, onAddToCart, cartQuantities = {} }) {
   const [meta, setMeta] = useState({ categories: [], cities: [city] })
   const [category, setCategory] = useState('')
   const [minPrice, setMinPrice] = useState(null)
@@ -191,7 +191,7 @@ export default function StorePage({ query, onClearQuery, city, onCityChange, onA
           ) : (
             <div className={`grid${loading ? ' grid--updating' : ''}`}>
               {result.items.map((p) => (
-                <ProductCard key={p.id} product={p} onAdd={onAddToCart} />
+                <ProductCard key={p.id} product={p} onAdd={onAddToCart} cartQty={cartQuantities[p.id] || 0} />
               ))}
             </div>
           )}

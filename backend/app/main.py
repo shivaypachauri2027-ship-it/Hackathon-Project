@@ -6,6 +6,7 @@ Run from the backend/ folder (virtual environment active):
 
 Interactive API docs (great to show judges): http://localhost:8000/docs
 """
+import re
 from contextlib import asynccontextmanager
 
 import psycopg
@@ -14,8 +15,9 @@ from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from psycopg_pool import PoolTimeout
+from pydantic import BaseModel, Field, field_validator
 
-from . import catalog, db
+from . import catalog, db, orders
 from .config import CORS_ORIGINS, DEFAULT_CITY
 
 
@@ -33,7 +35,7 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(
     title="InstaStock API",
-    version="0.2.0",
+    version="0.3.0",
     description="Event-driven online store: PostgreSQL + Kafka + OpenSearch",
     lifespan=lifespan,
 )
@@ -67,6 +69,12 @@ async def tables_missing(request: Request, exc: Exception):
     )
 
 
+@app.exception_handler(orders.OrderError)
+async def order_problem(request: Request, exc: orders.OrderError):
+    # e.g. 409 "Not enough stock" with the list of items that ran out
+    return JSONResponse(status_code=exc.status, content={"detail": exc.message, "problems": exc.problems})
+
+
 def _check_city(city: str) -> str:
     cities = catalog.list_cities()
     if city not in cities:
@@ -79,7 +87,7 @@ def health():
     """The footer of the website shows these statuses."""
     return {
         "status": "ok",
-        "phase": 2,
+        "phase": 3,
         "catalog_source": catalog.SOURCE,
         "services": {
             "postgres": db.ping(),
@@ -126,3 +134,52 @@ def get_product(product_id: int, city: str = DEFAULT_CITY):
     if product is None:
         raise HTTPException(404, "Product not found")
     return product
+
+
+# ------------------------------------------------------------------ orders (Phase 3)
+
+class CartItem(BaseModel):
+    product_id: int
+    quantity: int = Field(ge=1, le=orders.MAX_QTY_PER_ITEM)
+
+
+class Customer(BaseModel):
+    name: str = Field(min_length=2, max_length=80)
+    phone: str
+    address: str = Field(min_length=10, max_length=300)
+
+    @field_validator("phone")
+    @classmethod
+    def indian_mobile(cls, v: str) -> str:
+        digits = re.sub(r"\D", "", v)[-10:]          # accepts "+91 98765 43210"
+        if not re.fullmatch(r"[6-9]\d{9}", digits):
+            raise ValueError("enter a 10-digit Indian mobile number")
+        return digits
+
+
+class OrderRequest(BaseModel):
+    city: str
+    customer: Customer
+    items: list[CartItem] = Field(min_length=1, max_length=20)
+
+
+@app.post("/api/orders", status_code=201)
+def create_order(req: OrderRequest):
+    """Checkout. Reserves stock atomically; returns 409 if anything ran out."""
+    _check_city(req.city)
+    return orders.place_order(
+        req.customer.model_dump(), req.city, [item.model_dump() for item in req.items]
+    )
+
+
+@app.get("/api/orders")
+def list_recent_orders(limit: int = 20):
+    return orders.recent_orders(min(max(limit, 1), 100))
+
+
+@app.get("/api/orders/{order_number}")
+def get_order(order_number: str):
+    order = orders.get_order(order_number.upper())
+    if order is None:
+        raise HTTPException(404, "Order not found")
+    return order

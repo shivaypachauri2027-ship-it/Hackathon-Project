@@ -26,11 +26,21 @@ function CartIcon() {
   )
 }
 
-export default function Navbar({ query, onQueryChange, cartCount = 0, onCartClick }) {
+export default function Navbar({ query, onQueryChange, cartCount = 0, onCartClick, onHome }) {
   return (
     <header className="nav">
       <div className="nav__inner">
-        <a className="brand" href="/" aria-label="InstaStock home">
+        <a
+          className="brand"
+          href="/"
+          aria-label="InstaStock home"
+          onClick={(e) => {
+            if (onHome) {
+              e.preventDefault()
+              onHome()
+            }
+          }}
+        >
           <BoltIcon />
           <span>InstaStock</span>
         </a>
