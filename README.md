@@ -5,6 +5,9 @@
 Built in 24 hours for **Build Bengaluru 2.0** by team **Code Verse** (DSATM).
 
 ![Flash sale: 20 shoppers try to buy the last unit at the same moment, exactly one succeeds](docs/screenshots/flash-sale.png)
+**Live demo:** https://hackathon-project-cyan-nine.vercel.app
+**API docs:** https://hackathon-project-vm2b.onrender.com/docs
+
 
 Stack: **React + Vite** · **Python + FastAPI** · **Aiven PostgreSQL** · **Aiven Apache Kafka** · **Aiven OpenSearch**
 
