@@ -1,15 +1,15 @@
 """
-Product catalog — PHASE 2 VERSION (PostgreSQL).
+Product catalog — PHASE 5 VERSION.
 
-Products and stock now come from the Aiven PostgreSQL database.
-Search is still exact-word matching (SQL ILIKE); Phase 5 moves search to
-OpenSearch for typo tolerance. The returned data has exactly the same shape
-as in Phase 1, so the frontend did not change at all.
+Browsing and searching use OPENSEARCH (typo-tolerant, fast filters).
+If OpenSearch is switched off or unreachable, we fall back to PostgreSQL
+(exact words only) and the website says so. Product details and checkout
+always read PostgreSQL, the source of truth.
 """
-from . import db
+from . import db, search
 
-SOURCE = "postgres"
-SEARCH_MODE = "exact words, PostgreSQL ILIKE (typo search comes with OpenSearch)"
+SOURCE = "opensearch" if search.is_enabled() else "postgres"
+SEARCH_MODE = "exact words, PostgreSQL ILIKE"
 
 # Whitelist of ORDER BY clauses: user input never goes into SQL directly
 SORTS = {
@@ -95,6 +95,22 @@ def list_categories() -> list[dict]:
 
 def list_products(q=None, category=None, city="Bengaluru", min_price=None,
                   max_price=None, in_stock=False, sort="relevance") -> dict:
+    args = dict(q=q, category=category, city=city, min_price=min_price,
+                max_price=max_price, in_stock=in_stock, sort=sort)
+    if search.is_enabled():
+        try:
+            return search.search_products(**args)
+        except Exception as e:
+            result = _list_products_postgres(**args)
+            result["search_mode"] = f"PostgreSQL FALLBACK, exact words only (OpenSearch error: {type(e).__name__})"
+            return result
+    result = _list_products_postgres(**args)
+    result["search_mode"] = "PostgreSQL FALLBACK, exact words only (OpenSearch is switched off)"
+    return result
+
+
+def _list_products_postgres(q=None, category=None, city="Bengaluru", min_price=None,
+                            max_price=None, in_stock=False, sort="relevance") -> dict:
     where, params = [], {"city": city}
 
     if q:
@@ -131,7 +147,7 @@ def list_products(q=None, category=None, city="Bengaluru", min_price=None,
         "items": items,
         "total": len(items),
         "city": city,
-        "source": SOURCE,
+        "source": "postgres",
         "search_mode": SEARCH_MODE,
     }
 

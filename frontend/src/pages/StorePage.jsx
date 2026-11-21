@@ -156,7 +156,12 @@ export default function StorePage({ query, onClearQuery, city, onCityChange, onA
               {result && !error && (
                 <p className="results__source" title={result.search_mode}>
                   Served by {sourceLabel(result.source)}
-                  {q && result.search_mode ? `, ${result.search_mode}` : ''}
+                  {result.search_mode ? `, ${result.search_mode}` : ''}
+                </p>
+              )}
+              {result && !error && result.did_you_mean && (
+                <p className="results__fix">
+                  Showing results for “<strong>{result.did_you_mean}</strong>”. You typed “{q}”.
                 </p>
               )}
             </div>

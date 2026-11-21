@@ -17,7 +17,7 @@ from fastapi.responses import JSONResponse
 from psycopg_pool import PoolTimeout
 from pydantic import BaseModel, Field, field_validator
 
-from . import catalog, db, events, orders
+from . import catalog, db, events, orders, search
 from .config import CORS_ORIGINS, DEFAULT_CITY
 
 
@@ -38,7 +38,7 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(
     title="InstaStock API",
-    version="0.4.0",
+    version="0.5.0",
     description="Event-driven online store: PostgreSQL + Kafka + OpenSearch",
     lifespan=lifespan,
 )
@@ -90,12 +90,12 @@ def health():
     """The footer of the website shows these statuses."""
     return {
         "status": "ok",
-        "phase": 4,
+        "phase": 5,
         "catalog_source": catalog.SOURCE,
         "services": {
             "postgres": db.ping(),
             "kafka": events.health(),
-            "opensearch": {"status": "pending", "detail": "Connected in Phase 5"},
+            "opensearch": search.health(),
         },
     }
 
